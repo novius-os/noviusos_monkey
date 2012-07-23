@@ -1,0 +1,54 @@
+<?php
+/**
+ * NOVIUS OS - Web OS for digital communication
+ *
+ * @copyright  2011 Novius
+ * @license    GNU Affero General Public License v3 or (at your option) any later version
+ *             http://www.gnu.org/licenses/agpl-3.0.html
+ * @link http://www.novius-os.org
+ */
+
+namespace Nos\Monkey;
+
+class Model_Monkey extends \Nos\Orm\Model {
+    protected static $_table_name = 'nos_monkey';
+    protected static $_primary_key = array('monk_id');
+
+    protected static $_belongs_to = array(
+        'breed' => array(
+            'key_from' => 'monk_breed_id',
+            'model_to' => 'Nos\Monkey\Model_Breed',
+            'key_to' => 'mkbr_id',
+            'cascade_save' => false,
+            'cascade_delete' => false,
+        ),
+    );
+
+    protected static $_observers = array(
+        'Orm\\Observer_CreatedAt' => array(
+            'property' => 'monk_created_at',
+        ),
+        'Orm\\Observer_UpdatedAt' => array(
+            'property' => 'monk_updated_at',
+        ),
+    );
+
+    protected static $_behaviours = array(
+		'Nos\Orm_Behaviour_Translatable' => array(
+			'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'before_change_parent', 'after_change_parent'),
+			'lang_property'      => 'monk_lang',
+			'common_id_property' => 'monk_lang_common_id',
+			'single_id_property' => 'monk_lang_single_id',
+            'invariant_fields'   => array(),
+		),
+        'Nos\Orm_Behaviour_Publishable' => array(
+            'publication_bool_property' => 'monk_published',
+        ),
+		'Nos\Orm_Behaviour_Url' => array(),
+	);
+
+    public function get_possible_lang() {
+        return array_keys(\Config::get('locales'));
+    }
+}
+

@@ -72,12 +72,12 @@ define([
                             });
                         }
                     },
-                    breed : {
-                        label : appDesk.i18n('Add a breed'),
+                    species : {
+                        label : appDesk.i18n('Add a species'),
                         action : function(ui, appdesk) {
                             $(ui).nosTabs({
-                                url: 'admin/noviusos_monkey/breed/crud?lang=' + appdesk.lang,
-                                label: 'Add a breed'
+                                url: 'admin/noviusos_monkey/species/crud?lang=' + appdesk.lang,
+                                label: 'Add a species'
                             });
                         }
                     }
@@ -93,9 +93,9 @@ define([
                         lang : {
                             lang : true
                         },
-                        breed : {
-                            headerText : appDesk.i18n('Breed'),
-                            dataKey : 'breed'
+                        species : {
+                            headerText : appDesk.i18n('Species'),
+                            dataKey : 'species'
                         },
                         published : {
                             headerText : appDesk.i18n('Status'),
@@ -107,20 +107,20 @@ define([
                     }
                 },
                 inspectors : {
-                    breeds : {
-                        reloadEvent : 'Nos\\Model_Breed',
-                        label : appDesk.i18n('Breeds'),
-                        url : 'admin/noviusos_monkey/inspector/breed/list',
+                    speciess : {
+                        reloadEvent : 'Nos\\Model_Species',
+                        label : appDesk.i18n('Speciess'),
+                        url : 'admin/noviusos_monkey/inspector/species/list',
                         grid : {
                             columns : {
                                 title : {
-                                    headerText : appDesk.i18n('Breed'),
+                                    headerText : appDesk.i18n('Species'),
                                     dataKey : 'title'
                                 }
                             },
-                            urlJson : 'admin/noviusos_monkey/inspector/breed/json'
+                            urlJson : 'admin/noviusos_monkey/inspector/species/json'
                         },
-                        inputName : 'monk_breed_id[]',
+                        inputName : 'monk_species_id[]',
                         vertical : true
                     }
                 }

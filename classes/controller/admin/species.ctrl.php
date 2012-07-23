@@ -10,12 +10,12 @@
 
 namespace Nos\Monkey;
 
-class Controller_Admin_Breed extends \Nos\Controller_Admin_Crud {
+class Controller_Admin_Species extends \Nos\Controller_Admin_Crud {
 
     protected function fieldset($fieldset)
     {
         $fieldset = parent::fieldset($fieldset);
-        $fieldset->field('mkbr_virtual_name')->set_template('<th>{label}{required}</th><td><div class="table-field">{field} <span>&nbsp;.html</span></div></td>');
+        $fieldset->field('mksp_virtual_name')->set_template('<th>{label}{required}</th><td><div class="table-field">{field} <span>&nbsp;.html</span></div></td>');
         return $fieldset;
     }
 }

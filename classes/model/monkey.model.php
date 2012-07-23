@@ -15,10 +15,10 @@ class Model_Monkey extends \Nos\Orm\Model {
     protected static $_primary_key = array('monk_id');
 
     protected static $_belongs_to = array(
-        'breed' => array(
-            'key_from' => 'monk_breed_id',
-            'model_to' => 'Nos\Monkey\Model_Breed',
-            'key_to' => 'mkbr_id',
+        'species' => array(
+            'key_from' => 'monk_species_id',
+            'model_to' => 'Nos\Monkey\Model_Species',
+            'key_to' => 'mksp_id',
             'cascade_save' => false,
             'cascade_delete' => false,
         ),

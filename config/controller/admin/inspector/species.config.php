@@ -1,4 +1,5 @@
 <?php
+
 /**
  * NOVIUS OS - Web OS for digital communication
  *
@@ -8,8 +9,13 @@
  * @link http://www.novius-os.org
  */
 
-namespace Nos\Monkey;
-
-class Controller_Admin_Inspector_Breed extends \Nos\Controller_Inspector_Model {
-
-}
+return array(
+	'query' => array(
+		'model' => 'Nos\Monkey\Model_Species',
+		'order_by' => array('mksp_title' => 'ASC'),
+	),
+	'dataset' => array(
+		'id' => 'mksp_id',
+		'title' => 'mksp_title',
+	),
+);

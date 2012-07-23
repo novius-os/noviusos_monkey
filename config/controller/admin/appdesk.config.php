@@ -14,7 +14,7 @@ I18n::load('noviusos_monkey::item');
 return array(
 	'query' => array(
 		'model' => 'Nos\Monkey\Model_Monkey',
-		'related' => array('breed'),
+		'related' => array('species'),
         'order_by' => array('monk_name' => 'ASC'),
 		'limit' => 20,
 	),
@@ -29,10 +29,10 @@ return array(
 	'dataset' => array(
 		'id' => 'monk_id',
 		'name' => 'monk_name',
-		'breed' => array(
-			'search_relation' => 'breed',
-			'search_column'   => 'breed.mkbr_title',
-			'value' =>  'mkbr_title',
+		'species' => array(
+			'search_relation' => 'species',
+			'search_column'   => 'species.mksp_title',
+			'value' =>  'mksp_title',
 		),
 		'url' => array(
 			'value' => function($object) {
@@ -47,9 +47,9 @@ return array(
 		),
 	),
 	'inputs' => array(
-		'monk_breed_id' => function($value, $query) {
+		'monk_species_id' => function($value, $query) {
 			if ( is_array($value) && count($value) && $value[0]) {
-				$query->where(array('monk_breed_id', 'in', $value));
+				$query->where(array('monk_species_id', 'in', $value));
 			}
 			return $query;
 		},

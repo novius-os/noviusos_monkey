@@ -1,19 +1,19 @@
 <?php
 return array (
-    'controller_url'  => 'admin/noviusos_monkey/breed',
-    'model' => 'Nos\\Monkey\\Model_Breed',
+    'controller_url'  => 'admin/noviusos_monkey/species',
+    'model' => 'Nos\\Monkey\\Model_Species',
     'messages' => array(
-        'successfully added' => __('Breed successfully added.'),
-        'successfully saved' => __('Breed successfully saved.'),
-        'item deleted' => __('This breed has been deleted.'),
-        'blank_state_item_text' => __('breed'),
+        'successfully added' => __('Species successfully added.'),
+        'successfully saved' => __('Species successfully saved.'),
+        'item deleted' => __('This species has been deleted.'),
+        'blank_state_item_text' => __('species'),
     ),
     'tab' => array(
         'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',
         'labels' => array(
-            'update' => 'mkbr_title',
-            'insert' => __('Add a breed'),
-            'blankSlate' => __('Translate a breed'),
+            'update' => 'mksp_title',
+            'insert' => __('Add a species'),
+            'blankSlate' => __('Translate a species'),
         ),
 
         'actions' => array(
@@ -29,7 +29,7 @@ return array (
         ),
     ),
     'layout' => array(
-        'title' => 'mkbr_title',
+        'title' => 'mksp_title',
         'large' => true,
         'content' => array(
             'expander' => array(
@@ -45,7 +45,7 @@ return array (
                         'params' => array(
                             'begin' => '<table class="fieldset">',
                             'fields' => array(
-                                'mkbr_virtual_name',
+                                'mksp_virtual_name',
                             ),
                             'end' => '</table>',
                         ),
@@ -56,13 +56,13 @@ return array (
         'save' => 'save',
     ),
     'fields' => array(
-        'mkbr_id' => array (
+        'mksp_id' => array (
             'label' => __('Id: '),
             'widget' => 'Nos\Widget_Text',
             'editable' => false,
         ),
-        'mkbr_title' => array (
-            'label' => __('Breed'),
+        'mksp_title' => array (
+            'label' => __('Species'),
             'form' => array(
                 'type' => 'text',
             ),
@@ -71,7 +71,7 @@ return array (
                 'min_length' => array(2),
             ),
         ),
-        'mkbr_virtual_name' => array(
+        'mksp_virtual_name' => array(
             'label' => __('URL: '),
             'form' => array(
                 'type' => 'text',

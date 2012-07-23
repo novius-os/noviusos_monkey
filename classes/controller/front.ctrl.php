@@ -26,7 +26,7 @@ class Controller_Front extends Controller_Front_Application {
     public $current_page = 1;
 
     /**
-     * @var Nos\Monkey\Model_Breed
+     * @var Nos\Monkey\Model_Species
      */
     public $author;
 
@@ -151,7 +151,7 @@ class Controller_Front extends Controller_Front_Application {
 
         list(,,$cat_id, $page) = $this->enhancerUrl_segments;
 
-        $this->author = \Nos\Monkey\Model_Breed::find($cat_id);
+        $this->author = \Nos\Monkey\Model_Species::find($cat_id);
         $list = $this->_display_list('author');
 
         $class = get_called_class();
@@ -444,7 +444,7 @@ class Controller_Front extends Controller_Front_Application {
 				return $url.'tag/'.urlencode($item->tag_label).($page > 1 ? '/'.$page : '').'.html';
 				break;
 
-			case 'Nos\Monkey\Model_Breed' :
+			case 'Nos\Monkey\Model_Species' :
 				return $url.'author/'.urlencode($item->fullname()).($page > 1 ? '/'.$page : '').'.html';
 				break;
 		}

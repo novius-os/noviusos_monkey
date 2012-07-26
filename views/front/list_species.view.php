@@ -8,8 +8,8 @@
  * @link http://www.novius-os.org
  */
 ?>
-<div class="billets">
-    <h1><a href="<?= $link_to_author($author); ?>"><?= $author->fullname() ?></a></h1>
+<div class="monkeys">
+    <h1><a href="<?= $link_species ?>"><?= $species->mksp_title ?></a></h1>
     <?= $list ?>
     <?= $pagination ?>
 </div>

@@ -26,9 +26,13 @@ class Model_Monkey extends \Nos\Orm\Model {
 
     protected static $_observers = array(
         'Orm\\Observer_CreatedAt' => array(
+            'events' => array('before_insert'),
+            'mysql_timestamp' => true,
             'property' => 'monk_created_at',
         ),
         'Orm\\Observer_UpdatedAt' => array(
+            'events' => array('before_save'),
+            'mysql_timestamp' => true,
             'property' => 'monk_updated_at',
         ),
     );

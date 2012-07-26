@@ -20,7 +20,7 @@ define([
                 update : {
                     action : function(item, ui) {
                         $(ui).nosTabs({
-                            url     : "admin/noviusos_monkey/monkey/crud/" + item.id,
+                            url     : "admin/noviusos_monkey/monkey/insert_update/" + item.id,
                             label   : appDesk.i18n('Edit')._()
                         });
                     },
@@ -33,11 +33,11 @@ define([
                     action : function(item, ui) {
                         $.appDesk = appDesk;
                         $(ui).nosConfirmationDialog({
-                            contentUrl: 'admin/noviusos_monkey/appdesk/delete/' + item.id,
+                            contentUrl: 'admin/noviusos_monkey/monkey/delete/' + item.id,
                             title: appDesk.i18n('Delete a monkey')._(),
                             confirmed: function($dialog) {
                                 $dialog.nosAjax({
-                                    url : 'admin/noviusos_monkey/appdesk/delete_confirm',
+                                    url : 'admin/noviusos_monkey/monkey/delete_confirm',
                                     method : 'POST',
                                     data : $dialog.find('form').serialize()
                                 });
@@ -60,14 +60,14 @@ define([
                     }
                 }
             },
-            reloadEvent : 'Nos\\Application\\Model_Monkey',
+            reloadEvent : 'Nos\\Monkey\\Model_Monkey',
             appdesk : {
                 adds : {
                     monkey : {
                         label : appDesk.i18n('Add a monkey'),
                         action : function(ui, appdesk) {
                             $(ui).nosTabs('add', {
-                                url     : 'admin/noviusos_monkey/monkey/crud?lang=' + appdesk.lang,
+                                url     : 'admin/noviusos_monkey/monkey/insert_update?lang=' + appdesk.lang,
                                 label   : appDesk.i18n('Add a new monkey')._()
                             });
                         }
@@ -76,7 +76,7 @@ define([
                         label : appDesk.i18n('Add a species'),
                         action : function(ui, appdesk) {
                             $(ui).nosTabs({
-                                url: 'admin/noviusos_monkey/species/crud?lang=' + appdesk.lang,
+                                url: 'admin/noviusos_monkey/species/insert_update?lang=' + appdesk.lang,
                                 label: 'Add a species'
                             });
                         }
@@ -108,7 +108,7 @@ define([
                 },
                 inspectors : {
                     speciess : {
-                        reloadEvent : 'Nos\\Model_Species',
+                        reloadEvent : 'Nos\\Monkey\\Model_Species',
                         label : appDesk.i18n('Speciess'),
                         url : 'admin/noviusos_monkey/inspector/species/list',
                         grid : {
@@ -116,7 +116,44 @@ define([
                                 title : {
                                     headerText : appDesk.i18n('Species'),
                                     dataKey : 'title'
+                                },
+                                actions : {
+                                    showOnlyArrow : true,
+                                    actions : [
+                                        {
+                                            action : function(item, ui) {
+                                                $(ui).nosTabs({
+                                                    url     : "admin/noviusos_monkey/species/insert_update/" + item.id,
+                                                    label   : appDesk.i18n('Edit')._()
+                                                });
+                                            },
+                                            label : appDesk.i18n('Edit'),
+                                            name : 'edit',
+                                            primary : true,
+                                            icon : 'pencil'
+                                        },
+                                        {
+                                            action : function(item, ui) {
+                                                $(ui).nosConfirmationDialog({
+                                                    contentUrl: 'admin/noviusos_monkey/species/delete/' + item.id,
+                                                    title: appDesk.i18n('Delete a species')._(),
+                                                    confirmed: function($dialog) {
+                                                        $dialog.nosAjax({
+                                                            url : 'admin/noviusos_monkey/species/delete_confirm',
+                                                            method : 'POST',
+                                                            data : $dialog.find('form').serialize()
+                                                        });
+                                                    }
+                                                });
+                                            },
+                                            label : appDesk.i18n('Delete'),
+                                            name : 'delete',
+                                            primary : true,
+                                            icon : 'trash'
+                                        }
+                                    ]
                                 }
+
                             },
                             urlJson : 'admin/noviusos_monkey/inspector/species/json'
                         },

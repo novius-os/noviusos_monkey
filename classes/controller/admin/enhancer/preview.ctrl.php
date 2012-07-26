@@ -10,7 +10,7 @@
 
 namespace Nos\Monkey;
 
-class Controller_Admin_Preview extends \Nos\Controller_Admin_Application {
+class Controller_Admin_Enhancer_Preview extends \Nos\Controller_Admin_Application {
 
     public function action_index() {
         return $this->action_save();
@@ -20,7 +20,7 @@ class Controller_Admin_Preview extends \Nos\Controller_Admin_Application {
 
         $body = array(
             'config'  => \Format::forge()->to_json($_POST),
-            'preview' => \View::forge('noviusos_monkey::preview',$_POST)->render(),
+            'preview' => \View::forge($this->config['views']['index'], $_POST)->render(),
         );
         \Response::json($body);
     }

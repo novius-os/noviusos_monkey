@@ -7,8 +7,14 @@
  *             http://www.gnu.org/licenses/agpl-3.0.html
  * @link http://www.novius-os.org
  */
-?>
-<input type="hidden" name="id" value="<?= $item->id ?>" />
-<p>
-    <?= Str::tr(__('You are about to delete the item post <span style="font-weight: bold;">":item_title"</span>. Are you sure you want to continue?'), array('item_title' => $item->item_title)) ?>
-</p>
+
+namespace Nos\Monkey;
+
+use Nos\Controller;
+
+class Controller_Admin_Enhancer_Popup extends \Nos\Controller_Admin_Application {
+
+	public function action_index() {
+		return \View::forge($this->config['views']['index']);
+	}
+}

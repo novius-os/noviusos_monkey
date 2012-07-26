@@ -8,7 +8,7 @@
  * @link http://www.novius-os.org
  */
 ?>
-<div class="billets">
+<div class="monkeys">
     <?= $list ?>
     <?= $pagination ?>
 </div>

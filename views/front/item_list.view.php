@@ -8,23 +8,11 @@
  * @link http://www.novius-os.org
  */
 ?>
-<div class="billet">
-    <div id="encart_gauche_item" style="margin-bottom:10px;margin-top:8px;">
+<div class="monkey">
+    <div class="thumbnail">
       <?= $thumbnail ?>
-      <br />
-      <?= $date ?>
-      <br />
-      <div class="auteur"><?= $author ?></div>
     </div>
-    <div id="encart_droite_item" style="margin-top:5px;margin-left:220px;margin-bottom:10px;">
-      <?= $title ?>
-      <br />
-      <div class="resume" style="text-align:justify"><?= $summary ?></div>
-      <a href="<?= $link_to_item ?>" class="read_more"><?= __('Read more') ?></a>
-      <br />
-      <div style="clear:left;"></div>
-    </div>
-    <div class="nb_commentaire">
-      <?= $stats ?>
-    </div>
+    <h2><?= $name ?></h2>
+    <div class="species"><?= $species ?></div>
+    <div style="clear:left;"></div>
 </div>

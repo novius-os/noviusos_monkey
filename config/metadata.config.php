@@ -31,11 +31,11 @@ return array(
 	        //'enhancer' => 'noviusos_monkey/front',
             'urlEnhancer' => 'noviusos_monkey/front/main',
             'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',
-            'previewUrl' => 'admin/noviusos_monkey/preview',
+            'previewUrl' => 'admin/noviusos_monkey/enhancer/preview',
 	        'dialog' => array(
-		        'contentUrl' => 'admin/noviusos_monkey/popup',
+		        'contentUrl' => 'admin/noviusos_monkey/enhancer/popup',
 		        'width' => 450,
-		        'height' => 180,
+		        'height' => 200,
 		        'ajax' => true,
 	        ),
 	        'models_url_enhanced' => array(

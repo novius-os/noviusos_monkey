@@ -30,9 +30,9 @@ return array(
 		'id' => 'monk_id',
 		'name' => 'monk_name',
 		'species' => array(
-			'search_relation' => 'species',
-			'search_column'   => 'species.mksp_title',
-			'value' =>  'mksp_title',
+            'value' => function($object) {
+                return $object->species->mksp_title;
+            },
 		),
 		'url' => array(
 			'value' => function($object) {

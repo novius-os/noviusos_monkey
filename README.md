@@ -1,7 +1,7 @@
 Monkey
 ======
 
-A application sample for Novius OS
+An application sample for Novius OS
 
 **Requirements**
 

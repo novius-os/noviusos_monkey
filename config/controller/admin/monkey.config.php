@@ -29,17 +29,6 @@ return array(
             'insert' => __('Add a monkey'),
             'blankSlate' => __('Translate a monkey'),
         ),
-        'actions' => array(
-            'visualise' => function($item) {
-                return array(
-                    'label' => __('Visualise'),
-                    'action' => array(
-                        'openWindow' => $item->first_url() . '?_preview=1',
-                    ),
-                    'iconClasses' => 'nos-icon16 nos-icon16-eye',
-                );
-            }
-        ),
     ),
     'layout' => array(
         'title' => 'monk_name',

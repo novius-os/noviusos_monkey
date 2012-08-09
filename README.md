@@ -18,3 +18,7 @@ Have a Novius OS instance up to date on dev branch
 * Open your Novius OS Administration in your browser
 * Click on the tray app "Applications manager" and install Monkey
 * That's it
+
+**Licence**
+
+Licensed under [GNU Affero General Public License v3](http://www.gnu.org/licenses/agpl-3.0.html) or (at your option) any later version

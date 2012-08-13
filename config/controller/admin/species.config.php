@@ -61,9 +61,8 @@ return array (
         ),
         'mksp_virtual_name' => array(
             'label' => __('URL: '),
-            'form' => array(
-                'type' => 'text',
-            ),
+            'widget' => 'Nos\Widget_Virtualname',
+            'template' => '<th>{label}{required}</th><td><div class="table-field">{field} <span>&nbsp;.html</span></div>{use_title_checkbox}</td>',
             'validation' => array(
                 'required',
                 'min_length' => array(2),

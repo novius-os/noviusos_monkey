@@ -117,9 +117,7 @@ return array(
         ),
         'monk_virtual_name' => array(
             'label' => __('URL: '),
-            'form' => array(
-                'type' => 'text',
-            ),
+            'widget' => 'Nos\Widget_Virtualname',
             'validation' => array(
                 'required',
                 'min_length' => array(2),

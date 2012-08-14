@@ -32,12 +32,10 @@ define([
                 },
                 'delete' : {
                     action : {
-                        action : 'nosConfirmationDialog',
+                        action : 'confirmationDialog',
                         dialog : {
                             contentUrl: 'admin/noviusos_monkey/monkey/delete/{{id}}',
-                            title: appDesk.i18n('Delete a monkey')._(),
-                            confirmedUrl: 'admin/noviusos_monkey/monkey/delete_confirm',
-                            appDesk: appDesk
+                            title: appDesk.i18n('Delete a monkey')._()
                         }
                     },
                     label : appDesk.i18n('Delete'),
@@ -135,11 +133,10 @@ define([
                                         },
                                         {
                                             action : {
-                                                action : 'nosConfirmationDialog',
+                                                action : 'confirmationDialog',
                                                 dialog : {
                                                     contentUrl: 'admin/noviusos_monkey/species/delete/{{id}}',
-                                                    title: appDesk.i18n('Delete a species')._(),
-                                                    confirmedUrl: 'admin/noviusos_monkey/species/delete_confirm',
+                                                    title: appDesk.i18n('Delete a species')._()
                                                 }
                                             },
                                             label : appDesk.i18n('Delete'),

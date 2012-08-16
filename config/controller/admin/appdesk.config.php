@@ -29,18 +29,18 @@ return array(
 		'id' => 'monk_id',
 		'name' => 'monk_name',
 		'species' => array(
-            'value' => function($object) {
-                return $object->species->mksp_title;
+            'value' => function($item) {
+                return $item->species->mksp_title;
             },
 		),
 		'url' => array(
-			'value' => function($object) {
-				return $object->first_url();
+			'value' => function($item) {
+				return $item->first_url();
 			},
 		),
 		'actions' => array(
-			'visualise' => function($object) {
-				$url = $object->first_url();
+			'visualise' => function($item) {
+				$url = $item->first_url();
 				return !empty($url);
 			}
 		),

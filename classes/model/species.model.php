@@ -32,6 +32,10 @@ class Model_Species extends \Nos\Orm\Model {
             'invariant_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Url' => array(),
+        'Nos\Orm_Behaviour_Virtualname' => array(
+            'events' => array('before_save', 'after_save'),
+            'virtual_name_property' => 'mksp_virtual_name',
+        ),
     );
 
     public function get_possible_lang() {

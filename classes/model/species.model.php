@@ -25,7 +25,7 @@ class Model_Species extends \Nos\Orm\Model {
 
     protected static $_behaviours = array(
         'Nos\Orm_Behaviour_Translatable' => array(
-            'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'before_change_parent', 'after_change_parent'),
+            'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
             'lang_property'      => 'mksp_lang',
             'common_id_property' => 'mksp_lang_common_id',
             'single_id_property' => 'mksp_lang_single_id',

@@ -49,7 +49,11 @@ class Model_Monkey extends \Nos\Orm\Model {
             'publication_bool_property' => 'monk_published',
         ),
 		'Nos\Orm_Behaviour_Url' => array(),
-	);
+        'Nos\Orm_Behaviour_Virtualname' => array(
+            'events' => array('before_save', 'after_save'),
+            'virtual_name_property' => 'monk_virtual_name',
+        ),
+    );
 
     public function get_possible_lang() {
         return array_keys(\Config::get('locales'));

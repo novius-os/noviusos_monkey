@@ -142,7 +142,7 @@ return array(
                         'dataKey' => 'publication_status'
                     ),
                     'actions' => array(
-                        'actions' => ['update', 'delete', 'visualise']
+                        'actions' => array('update', 'delete', 'visualise'),
                     ),
                 ),
             ),
@@ -159,7 +159,7 @@ return array(
                             ),
                             'actions' => array(
                                 'showOnlyArrow' => true,
-                                'actions' => [
+                                'actions' => array(
                                     array(
                                         'action' => array(
                                             'action' => 'nosTabs',
@@ -186,7 +186,7 @@ return array(
                                         'primary' => true,
                                         'icon' => 'trash'
                                     ),
-                                ]
+                                ),
                             ),
 
                         ),

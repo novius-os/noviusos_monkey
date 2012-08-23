@@ -271,16 +271,15 @@ class Controller_Front extends Controller_Front_Application {
 
     static function get_url_model($item, $params = array()) {
         $model = get_class($item);
-        $url = isset($params['urlPath']) ? $params['urlPath'] : \Nos\Nos::main_controller()->getEnhancedUrlPath();
         $page = isset($params['page']) ? $params['page'] : 1;
 
         switch ($model) {
             case 'Nos\Monkey\Model_Monkey' :
-                return $url.urlencode($item->monk_virtual_name).'.html';
+                return urlencode($item->monk_virtual_name).'.html';
                 break;
 
             case 'Nos\Monkey\Model_Species' :
-                return $url.'species/'.urlencode($item->mksp_virtual_name).($page > 1 ? '/'.$page : '').'.html';
+                return 'species/'.urlencode($item->mksp_virtual_name).($page > 1 ? '/'.$page : '').'.html';
                 break;
         }
         return false;

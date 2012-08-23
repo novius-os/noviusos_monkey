@@ -12,47 +12,47 @@ use Nos\I18n;
 I18n::load('noviusos_monkey::item');
 
 return array(
-	'query' => array(
-		'model' => 'Nos\Monkey\Model_Monkey',
-		'related' => array('species'),
+    'query' => array(
+        'model' => 'Nos\Monkey\Model_Monkey',
+        'related' => array('species'),
         'order_by' => array('monk_name' => 'ASC'),
-		'limit' => 20,
-	),
-	'search_text' => 'monk_name',
-	'selectedView' => 'default',
-	'views' => array(
-		'default' => array(
-			'name' => __('Default view'),
-		),
-	),
-	'dataset' => array(
-		'id' => 'monk_id',
-		'name' => 'monk_name',
-		'species' => array(
+        'limit' => 20,
+    ),
+    'search_text' => 'monk_name',
+    'selectedView' => 'default',
+    'views' => array(
+        'default' => array(
+            'name' => __('Default view'),
+        ),
+    ),
+    'dataset' => array(
+        'id' => 'monk_id',
+        'name' => 'monk_name',
+        'species' => array(
             'value' => function($item) {
                 return $item->species->mksp_title;
             },
-		),
-		'url' => array(
-			'value' => function($item) {
-				return $item->first_url();
-			},
-		),
-		'actions' => array(
-			'visualise' => function($item) {
-				$url = $item->first_url();
-				return !empty($url);
-			}
-		),
-	),
-	'inputs' => array(
-		'monk_species_id' => function($value, $query) {
-			if ( is_array($value) && count($value) && $value[0]) {
-				$query->where(array('monk_species_id', 'in', $value));
-			}
-			return $query;
-		},
-	),
+        ),
+        'url' => array(
+            'value' => function($item) {
+                return $item->url_canonical(array('preview' => true));
+            },
+        ),
+        'actions' => array(
+            'visualise' => function($item) {
+                $url = $item->url_canonical(array('preview' => true));
+                return !empty($url);
+            }
+        ),
+    ),
+    'inputs' => array(
+        'monk_species_id' => function($value, $query) {
+            if ( is_array($value) && count($value) && $value[0]) {
+            $		$query->where(array('monk_species_id', 'in', $value));
+            }
+            return $query;
+        },
+    ),
     'appdesk' => array(
         'tab' => array(
             'label' => __('Monkey'),

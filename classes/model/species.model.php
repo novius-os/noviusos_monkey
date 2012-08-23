@@ -31,7 +31,9 @@ class Model_Species extends \Nos\Orm\Model {
             'single_id_property' => 'mksp_lang_single_id',
             'invariant_fields'   => array(),
         ),
-        'Nos\Orm_Behaviour_Url' => array(),
+        'Nos\Orm_Behaviour_Urlenhancer' => array(
+            'enhancers' => array('noviusos_monkey'),
+        ),
         'Nos\Orm_Behaviour_Virtualname' => array(
             'events' => array('before_save', 'after_save'),
             'virtual_name_property' => 'mksp_virtual_name',

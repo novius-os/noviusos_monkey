@@ -112,7 +112,7 @@ class Controller_Front extends Controller_Front_Application {
         $self  = $this;
         $link_species = static::get_url_model($this->species);
         $link_pagination = function($page) use ($self) {
-            return $self::get_url_model($self->species, array('page' => $page));
+            return $self->species->url(array('page' => $page));
         };
 
         $list = $this->display_list('species');
@@ -225,10 +225,6 @@ class Controller_Front extends Controller_Front_Application {
     protected function monkey($monkey, $data = array()) {
 
         $data['date_format'] = $this->config['date_format'];
-
-        // Additional data calculated per-item
-        $data['link_monkey'] = static::get_url_model($monkey);
-        $data['link_species'] = static::get_url_model($monkey->species);
 
         // Renders all the fields
         $fields = array();

@@ -9,7 +9,7 @@
  */
 ?>
 <div class="monkeys">
-    <h1><a href="<?= $link_species ?>"><?= $species->mksp_title ?></a></h1>
+    <h1><a href="<?= $species->url() ?>"><?= $species->mksp_title ?></a></h1>
     <?= $list ?>
     <?= $pagination ?>
 </div>

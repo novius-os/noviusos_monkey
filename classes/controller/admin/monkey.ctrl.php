@@ -18,7 +18,11 @@ class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud {
     {
         $fieldset = parent::fieldset($fieldset);
 
-        $species = Model_Species::find('all', array('lang' => $this->item->monk_lang));
+        $species = Model_Species::find('all', array(
+            'where' => array(
+                'mksp_lang' => $this->item->monk_lang,
+            ),
+        ));
         $options = array();
         foreach ($species as $sp)
         {

@@ -41,6 +41,7 @@ return array(
         'actions' => array(
             'visualise' => function($item) {
                 $url = $item->url_canonical(array('preview' => true));
+
                 return !empty($url);
             }
         ),
@@ -50,6 +51,7 @@ return array(
             if ( is_array($value) && count($value) && $value[0]) {
             $		$query->where(array('monk_species_id', 'in', $value));
             }
+
             return $query;
         },
     ),

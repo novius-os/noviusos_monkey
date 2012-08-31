@@ -10,6 +10,6 @@
 
 namespace Nos\Monkey;
 
-class Controller_Admin_Inspector_Species extends \Nos\Controller_Inspector_Model {
-
+class Controller_Admin_Inspector_Species extends \Nos\Controller_Inspector_Model
+{
 }

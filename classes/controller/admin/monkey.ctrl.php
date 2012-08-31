@@ -10,10 +10,8 @@
 
 namespace Nos\Monkey;
 
-use Nos\Controller;
-
-class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud {
-
+class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud
+{
     protected function fieldset($fieldset)
     {
         $fieldset = parent::fieldset($fieldset);
@@ -24,8 +22,7 @@ class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud {
             ),
         ));
         $options = array();
-        foreach ($species as $sp)
-        {
+        foreach ($species as $sp) {
             $options[$sp->mksp_id] = $sp->mksp_title;
         }
         $fieldset->field('monk_species_id')->set_options($options);

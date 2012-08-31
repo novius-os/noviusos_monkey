@@ -10,14 +10,15 @@
 
 namespace Nos\Monkey;
 
-class Controller_Admin_Enhancer_Preview extends \Nos\Controller_Admin_Application {
-
-    public function action_index() {
+class Controller_Admin_Enhancer_Preview extends \Nos\Controller_Admin_Application
+{
+    public function action_index()
+    {
         return $this->action_save();
     }
 
-    public function action_save() {
-
+    public function action_save()
+    {
         $body = array(
             'config'  => \Format::forge()->to_json($_POST),
             'preview' => \View::forge($this->config['views']['index'], $_POST)->render(),

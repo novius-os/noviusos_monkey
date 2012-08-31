@@ -10,5 +10,6 @@
 
 namespace Nos\Monkey;
 
-class Controller_Admin_Species extends \Nos\Controller_Admin_Crud {
+class Controller_Admin_Species extends \Nos\Controller_Admin_Crud
+{
 }

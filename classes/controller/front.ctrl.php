@@ -11,14 +11,11 @@
 namespace Nos\Monkey;
 
 use Nos\Controller_Front_Application;
-use Nos\Model_Page;
 
-use Fuel\Core\Inflector;
-use Fuel\Core\Str;
 use View;
 
-class Controller_Front extends Controller_Front_Application {
-
+class Controller_Front extends Controller_Front_Application
+{
     /**
      * @var Nos\Pagination
      */
@@ -33,16 +30,15 @@ class Controller_Front extends Controller_Front_Application {
 
     protected $enhancer_url_segments;
 
-    public function action_main($args = array()) {
-
+    public function action_main($args = array())
+    {
         $this->default_config = $this->config;
 
         $this->page_from = $this->main_controller->getPage();
 
         $this->merge_config('config');
 
-        if (isset($args['item_per_page']))
-        {
+        if (isset($args['item_per_page'])) {
             $this->config['item_per_page'] = $args['item_per_page'];
         }
 
@@ -55,11 +51,13 @@ class Controller_Front extends Controller_Front_Application {
 
             if (empty($segments[1])) {
                 return $this->display_monkey();
-            } else if ($segments[0] === 'page') {
+            } elseif ($segments[0] === 'page') {
                 $this->init_pagination(empty($segments[1]) ? 1 : $segments[1]);
+
                 return $this->display_list_monkey();
-            } else if ($segments[0] === 'species') {
+            } elseif ($segments[0] === 'species') {
                 $this->init_pagination(!empty($segments[2]) ? $segments[2] : 1);
+
                 return $this->display_list_species($args);
             }
 
@@ -67,16 +65,18 @@ class Controller_Front extends Controller_Front_Application {
         }
 
         $this->init_pagination(1);
+
         return $this->display_list_monkey();
     }
 
-    protected function init_pagination($page) {
+    protected function init_pagination($page)
+    {
         $this->current_page = $page;
         $this->pagination   = new \Nos\Pagination();
     }
 
-    protected function display_list_monkey() {
-
+    protected function display_list_monkey()
+    {
         $list = $this->display_list();
 
         $self   = $this;
@@ -89,13 +89,14 @@ class Controller_Front extends Controller_Front_Application {
                 if ($page == 1) {
                     return mb_substr($self->main_controller->getEnhancedUrlPath(), 0, -1).'.html';
                 }
+
                 return $self->main_controller->getEnhancedUrlPath().'page/'.$page.'.html';
             }),
         ), false);
     }
 
-    protected function display_list_species() {
-
+    protected function display_list_species()
+    {
         list(, $species) = $this->enhancer_url_segments;
 
         $this->species = Model_Species::find('first', array('where' => array(
@@ -126,8 +127,8 @@ class Controller_Front extends Controller_Front_Application {
         ), false);
     }
 
-    protected function display_list($context = 'monkeys') {
-
+    protected function display_list($context = 'monkeys')
+    {
         $this->config = \Arr::merge($this->config, $this->default_config['display_list'], $this->default_config["display_{$context}"]);
 
         // Get the list of monkeys
@@ -147,7 +148,7 @@ class Controller_Front extends Controller_Front_Application {
         ));
 
         $query->rows_offset($this->pagination->offset);
-        $query->rows_limit((int)$this->pagination->per_page);
+        $query->rows_limit((int) $this->pagination->per_page);
 
         $query->order_by($this->config['order_by']);
 
@@ -160,11 +161,12 @@ class Controller_Front extends Controller_Front_Application {
     /**
      * Display several items (from a list context)
      *
-     * @param   array   $items
-     * @param   string  $context = list_main | list_author | list_species
-     * @return  string  Rendered view
+     * @param  array  $items
+     * @param  string $context = list_main | list_author | list_species
+     * @return string Rendered view
      */
-    protected function display_items($items, $context = 'monkeys')  {
+    protected function display_items($items, $context = 'monkeys')
+    {
         // Loop meta-data
         $length = count($items);
         $index  = 1;
@@ -196,6 +198,7 @@ class Controller_Front extends Controller_Front_Application {
 
             $output[] = $this->monkey($item);
         }
+
         return implode('', $output);
     }
 
@@ -204,8 +207,8 @@ class Controller_Front extends Controller_Front_Application {
      *
      * @throws \Nos\NotFoundException
      */
-    protected function display_monkey() {
-
+    protected function display_monkey()
+    {
         list($item_virtual_name) = $this->enhancer_url_segments;
 
         $monkey = $this->get_monkey($item_virtual_name);
@@ -222,8 +225,8 @@ class Controller_Front extends Controller_Front_Application {
         echo $this->monkey($monkey);
     }
 
-    protected function monkey($monkey, $data = array()) {
-
+    protected function monkey($monkey, $data = array())
+    {
         $data['date_format'] = $this->config['date_format'];
 
         // Renders all the fields
@@ -239,10 +242,12 @@ class Controller_Front extends Controller_Front_Application {
         }
         $view = static::get_view($this->config['item_view']);
         $view->set($data + $fields, null, false);
+
         return $view;
     }
 
-    protected function get_monkey($where = array()) {
+    protected function get_monkey($where = array())
+    {
         // First argument is a string => it's the virtual name
         if (!is_array($where)) {
             $where = array(array('monk_virtual_name', '=', $where));
@@ -252,10 +257,12 @@ class Controller_Front extends Controller_Front_Application {
         if (!$this->main_controller->isPreview()) {
             $where[] = array('monk_published', '=', true);
         }
+
         return Model_Monkey::find('first', array('where' => $where));
     }
 
-    protected static function get_view($which) {
+    protected static function get_view($which)
+    {
         // Cache views
         static $views = array();
         if (empty($views[$which])) {
@@ -265,7 +272,8 @@ class Controller_Front extends Controller_Front_Application {
         return clone $views[$which];
     }
 
-    static function get_url_model($item, $params = array()) {
+    public static function get_url_model($item, $params = array())
+    {
         $model = get_class($item);
         $page = isset($params['page']) ? $params['page'] : 1;
 
@@ -278,6 +286,7 @@ class Controller_Front extends Controller_Front_Application {
                 return 'species/'.urlencode($item->mksp_virtual_name).($page > 1 ? '/'.$page : '').'.html';
                 break;
         }
+
         return false;
     }
 }

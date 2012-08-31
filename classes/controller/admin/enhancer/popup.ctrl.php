@@ -10,11 +10,10 @@
 
 namespace Nos\Monkey;
 
-use Nos\Controller;
-
-class Controller_Admin_Enhancer_Popup extends \Nos\Controller_Admin_Application {
-
-	public function action_index() {
-		return \View::forge($this->config['views']['index']);
-	}
+class Controller_Admin_Enhancer_Popup extends \Nos\Controller_Admin_Application
+{
+    public function action_index()
+    {
+        return \View::forge($this->config['views']['index']);
+    }
 }

@@ -10,7 +10,8 @@
 
 namespace Nos\Monkey;
 
-class Model_Species extends \Nos\Orm\Model {
+class Model_Species extends \Nos\Orm\Model
+{
     protected static $_table_name = 'nos_monkey_species';
     protected static $_primary_key = array('mksp_id');
 
@@ -40,8 +41,8 @@ class Model_Species extends \Nos\Orm\Model {
         ),
     );
 
-    public function get_possible_lang() {
+    public function get_possible_lang()
+    {
         return array_keys(\Config::get('locales'));
     }
 }
-

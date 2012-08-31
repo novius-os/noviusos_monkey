@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `nos_monkey` (
   KEY `blog_lang` (`monk_lang`,`monk_lang_common_id`,`monk_lang_single_id`),
   KEY `blog_virtual_name` (`monk_virtual_name`),
   KEY `monk_breed_id` (`monk_species_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `nos_monkey_species` (
   PRIMARY KEY (`mksp_id`),
   KEY `mkbr_lang` (`mksp_lang`),
   KEY `mkbr_virtual_name` (`mksp_virtual_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `nos_monkey_species`

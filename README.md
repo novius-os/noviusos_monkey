@@ -2,6 +2,7 @@ Monkey
 ======
 
 An application sample for Novius OS
+http://www.novius-os.org
 
 **Requirements**
 

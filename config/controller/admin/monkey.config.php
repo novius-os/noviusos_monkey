@@ -21,7 +21,9 @@ return array(
         'delete in the following languages' => __('Delete this monkey in the following languages:'),
         'item deleted' => __('This monkey has been deleted.'),
         'not found' => __('Monkey not found'),
-        'blank_state_item_text' => __('monkey'),
+        'error added in lang' => __('This monkey cannot be added {lang}.'),
+        'item inexistent in lang yet' => __('This monkey has not been added in {lang} yet.'),
+        'add a item in lang' => __('Add a new monkey in {lang}'),
     ),
     'tab' => array(
         'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',

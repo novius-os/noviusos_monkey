@@ -3,7 +3,7 @@ namespace Nos\Monkey;
 
 class Controller_Admin_Application extends \Nos\Controller
 {
-    public function action_index()
+    public function action_preview()
     {
         return $this->action_save();
     }

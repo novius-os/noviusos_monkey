@@ -11,7 +11,7 @@
 return array(
     'name'    => 'Monkey : Novius OS Application Bootstrap',
     'version' => '0.1',
-    'icon64'  => 'static/apps/noviusos_monkey/img/64/monkey.png',
+    'icon16' => 'static/apps/noviusos_monkey/img/16/monkey.png',
     'provider' => array(
         'name' => 'Provider',
     ),

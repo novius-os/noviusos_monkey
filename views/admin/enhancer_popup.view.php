@@ -9,7 +9,7 @@
  */
 ?>
 <div id="<?= $id = uniqid('temp_') ?>">
-    <form method="POST" action="admin/noviusos_monkey/enhancer/preview/save">
+    <form method="POST" action="admin/noviusos_monkey/application/save">
         <div class="line myBody">
             <div class="unit col c1"></div>
             <div class="unit col c10 ui-widget">

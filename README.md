@@ -1,23 +1,22 @@
 Monkey
 ======
 
-An application sample for Novius OS
+A sample application for Novius OS
+http://www.novius-os.org
 
 **Requirements**
 
-Have a Novius OS instance up to date on dev branch
+Have a Novius OS instance up to date on rel branch.
 
-**Installation**
+**Get started**
 
-* Open a shell
-* Go to local/applications
-* git clone git://github.com/novius-os/noviusos_monkey.git
-* That will create a noviusos_monkey directory
-* Execute the MySQL script noviusos_monkey/create_tables.sql in your Novius OS database
-* You have two new tables (nos_monkey and nos_monkey_species)
-* Open your Novius OS Administration in your browser
-* Click on the tray app "Applications manager" and install Monkey
-* That's it
+* Open a shell.
+* Go to local/applications.
+* git clone git://github.com/novius-os/noviusos_monkey.git. This creates a noviusos_monkey directory.
+* Execute the MySQL script noviusos_monkey/create_tables.sql in your Novius OS database. You get two new tables (nos_monkey and nos_monkey_species).
+* Open Novius OS back-office in your browser.
+* Go to the "Applications manager" tab (in the top-right corner) and install Monkey.
+* That's it, now play around with it and modify it!
 
 **Licence**
 

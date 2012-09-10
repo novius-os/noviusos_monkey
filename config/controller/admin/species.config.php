@@ -12,7 +12,10 @@ return array (
         'delete in the following languages' => __('Delete this species in the following languages:'),
         'item deleted' => __('This species has been deleted.'),
         'not found' => __('Species not found'),
-        'blank_state_item_text' => __('species'),
+        'error added in lang not parent' => __('This species cannot be added {lang} because its {parent} is not available in this language yet.'),
+        'error added in lang' => __('This species cannot be added {lang}.'),
+        'item inexistent in lang yet' => __('This species has not been added in {lang} yet.'),
+        'add a item in lang' => __('Add a new species in {lang}'),
     ),
     'tab' => array(
         'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',

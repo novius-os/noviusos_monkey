@@ -70,7 +70,6 @@ return array(
                     ),
                 ),
                 'label' => __('Edit'),
-                'name' => 'edit',
                 'primary' => true,
                 'icon' => 'pencil'
             ),
@@ -83,13 +82,11 @@ return array(
                     ),
                 ),
                 'label' => __('Delete'),
-                'name' => 'delete',
                 'primary' => true,
                 'icon' => 'trash'
             ),
             'visualise' => array(
                 'label' => 'Visualise',
-                'name' => 'visualise',
                 'primary' => true,
                 'iconClasses' => 'nos-icon16 nos-icon16-eye',
                 'action' => array(
@@ -126,7 +123,7 @@ return array(
             ),
             'splittersVertical' => 250,
             'grid' => array(
-                'proxyUrl' => 'admin/noviusos_monkey/appdesk/json',
+                'urlJson' => 'admin/noviusos_monkey/appdesk/json',
                 'columns' => array(
                     'name' => array(
                         'headerText' => __('Name'),

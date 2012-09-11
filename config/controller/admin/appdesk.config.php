@@ -49,7 +49,7 @@ return array(
     'inputs' => array(
         'monk_species_id' => function($value, $query) {
             if ( is_array($value) && count($value) && $value[0]) {
-            $		$query->where(array('monk_species_id', 'in', $value));
+                $query->where(array('monk_species_id', 'in', $value));
             }
 
             return $query;

@@ -42,7 +42,7 @@ return array(
 
                         return Arr::get(array_keys($possible), 0, null);
                     },
-                    'possibles' => function($monkey) {
+                    'options' => function($monkey) {
                         return $monkey->possible_medias();
                     },
                 ),

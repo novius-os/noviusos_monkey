@@ -15,7 +15,8 @@ return array (
         'error added in lang not parent' => __('This species cannot be added {lang} because its {parent} is not available in this language yet.'),
         'error added in lang' => __('This species cannot be added {lang}.'),
         'item inexistent in lang yet' => __('This species has not been added in {lang} yet.'),
-        'add a item in lang' => __('Add a new species in {lang}'),
+        'add an item in lang' => __('Add a new species in {lang}'),
+        'delete an item' => __('Delete a species'),
     ),
     'tab' => array(
         'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',

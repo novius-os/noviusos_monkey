@@ -23,7 +23,8 @@ return array(
         'not found' => __('Monkey not found'),
         'error added in lang' => __('This monkey cannot be added {lang}.'),
         'item inexistent in lang yet' => __('This monkey has not been added in {lang} yet.'),
-        'add a item in lang' => __('Add a new monkey in {lang}'),
+        'add an item in lang' => __('Add a new monkey in {lang}'),
+        'delete an item' => __('Delete a monkey'),
     ),
     'tab' => array(
         'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',
@@ -48,7 +49,6 @@ return array(
                     'content' => array(
                         'view' => 'nos::form/fields',
                         'params' => array(
-                            'field_template' => '{field}',
                             'fields' => array(
                                 'monk_summary',
                                 'wysiwygs->content->wysiwyg_text',

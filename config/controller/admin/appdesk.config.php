@@ -97,7 +97,7 @@ return array(
         ),
         'reloadEvent' => 'Nos\\Monkey\\Model_Monkey',
         'appdesk' => array(
-            'adds' => array(
+            'buttons' => array(
                 'monkey' => array(
                     'label' => __('Add a monkey'),
                     'action' => array(

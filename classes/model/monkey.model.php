@@ -43,7 +43,7 @@ class Model_Monkey extends \Nos\Orm\Model
             'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
             'lang_property'      => 'monk_lang',
             'common_id_property' => 'monk_lang_common_id',
-            'single_id_property' => 'monk_lang_single_id',
+            'is_main_property' => 'monk_lang_is_main',
             'invariant_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Publishable' => array(

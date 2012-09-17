@@ -19,8 +19,13 @@ return array(
     'launchers' => array(
         'provider_launcher' => array(
             'name'    => 'Monkey',
-            'url' => 'admin/noviusos_monkey/appdesk',
-            'iconUrl' => 'static/apps/noviusos_monkey/img/32/monkey.png',
+            'action' => array(
+                'action' => 'nosTabs',
+                'tab' => array(
+                    'url' => 'admin/noviusos_monkey/appdesk',
+                    'iconUrl' => 'static/apps/noviusos_monkey/img/32/monkey.png',
+                ),
+            ),
             'icon64'  => 'static/apps/noviusos_monkey/img/64/monkey.png',
         ),
     ),

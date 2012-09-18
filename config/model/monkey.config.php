@@ -8,7 +8,6 @@
  * @link http://www.novius-os.org
  */
 return array(
-
     'behaviours'   => array(
         'Nos\Orm_Behaviour_Sharable' => array(
             'data' => array(

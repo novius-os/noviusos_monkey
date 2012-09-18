@@ -62,4 +62,13 @@ class Model_Monkey extends \Nos\Orm\Model
     {
         return array_keys(\Config::get('locales'));
     }
+
+    public static function get_admin_config() {
+        list($application, $file) = \Config::configFile(get_called_class());
+        $file = explode('/', $file);
+        array_splice($file, count($file) - 1, 0, array('admin'));
+        $file = implode('/', $file);
+
+        return \Config::loadConfiguration($application, $file);
+    }
 }

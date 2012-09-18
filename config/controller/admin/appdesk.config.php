@@ -12,6 +12,7 @@ use Nos\I18n;
 I18n::load('noviusos_monkey::item');
 
 return array(
+    'model' => 'Nos\Monkey\Model_Monkey',
     'query' => array(
         'model' => 'Nos\Monkey\Model_Monkey',
         'related' => array('species'),

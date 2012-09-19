@@ -146,7 +146,7 @@ return array(
                 ),
             ),
             'inspectors' => array(
-                'speciess' => array(
+                'species' => array(
                     'reloadEvent' => 'Nos\\Monkey\\Model_Species',
                     'label' => __('Speciess'),
                     'url' => 'admin/noviusos_monkey/inspector/species/list',

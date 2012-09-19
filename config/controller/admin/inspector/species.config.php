@@ -10,12 +10,10 @@
  */
 
 return array(
-    'query' => array(
-        'model' => 'Nos\Monkey\Model_Species',
-        'order_by' => array('mksp_title' => 'ASC'),
-    ),
-    'dataset' => array(
-        'id' => 'mksp_id',
-        'title' => 'mksp_title',
+    'model' => 'Nos\Monkey\Model_Species',
+    'appdesk' => array(
+        'label' => __('Speciess'),
+        'inputName' => 'monk_species_id[]',
+        'vertical' => true,
     ),
 );

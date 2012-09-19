@@ -8,8 +8,14 @@
  * @link http://www.novius-os.org
  */
 return array(
+    'query' => array(
+        'model' => 'Nos\Monkey\Model_Monkey',
+        'related' => array('species'),
+        'order_by' => array('monk_name' => 'ASC'),
+        'limit' => 20,
+    ),
+    'search_text' => 'monk_name',
     'dataset' => array(
-        'id' => 'monk_id',
         'name' => array(
             'column'        => 'monk_name',
             'headerText'    => __('Name')
@@ -21,6 +27,7 @@ return array(
             },
             'headerText' => __('Species'),
         ),
+        'published' => true
         /*
         'url' => array(
             'value' => function($item) {
@@ -36,45 +43,4 @@ return array(
         ),
         */
     ),
-    'actions' => array(
-        'update' => array(
-            'action' => array(
-                'action' => 'nosTabs',
-                'tab' => array(
-                    'url' => "admin/noviusos_monkey/monkey/insert_update/{{id}}",
-                    'label' => __('Edit'),
-                ),
-            ),
-            'label' => __('Edit'),
-            'primary' => true,
-            'icon' => 'pencil'
-        ),
-        'delete' => array(
-            'action' => array(
-                'action' => 'confirmationDialog',
-                'dialog' => array(
-                    'contentUrl' => 'admin/noviusos_monkey/monkey/delete/{{id}}',
-                    'title' => __('Delete a monkey'),
-                ),
-            ),
-            'label' => __('Delete'),
-            'primary' => true,
-            'icon' => 'trash'
-        ),
-        'visualise' => array(
-            'label' => 'Visualise',
-            'primary' => true,
-            'iconClasses' => 'nos-icon16 nos-icon16-eye',
-            'action' => array(
-                'action' => 'window.open',
-                'url' => '{{url}}?_preview=1'
-            ),
-            'enabled' =>  function($item, $context) {
-                $url = $item->url_canonical(array('preview' => true));
-
-                return !empty($url);
-            }
-        )
-        /*'crud' => 'monkey', 'additionnals' => */,
-    )
 );

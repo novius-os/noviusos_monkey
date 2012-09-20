@@ -13,23 +13,11 @@ I18n::load('noviusos_monkey::item');
 
 return array(
     'model' => 'Nos\Monkey\Model_Monkey',
-    'inputs' => array(
-        'monk_species_id' => function($value, $query) {
-            if ( is_array($value) && count($value) && $value[0]) {
-                $query->where(array('monk_species_id', 'in', $value));
-            }
-
-            return $query;
-        },
-    ),
-    'splittersVertical' => 250,
+    'inspectors' => array('species'),
     'appdesk' => array(
-        'tab' => array(
+        'tab' => array( // @todo: generaliser
             'label' => __('Monkey'),
             'iconUrl' => 'static/apps/noviusos_monkey/img/32/monkey.png'
-        ),
-        'appdesk' => array(
-            'inspectors' => array('species')
         ),
     ),
 );

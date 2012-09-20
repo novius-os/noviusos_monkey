@@ -14,10 +14,4 @@ I18n::load('noviusos_monkey::item');
 return array(
     'model' => 'Nos\Monkey\Model_Monkey',
     'inspectors' => array('species'),
-    'appdesk' => array(
-        'tab' => array( // @todo: generaliser
-            'label' => __('Monkey'),
-            'iconUrl' => 'static/apps/noviusos_monkey/img/32/monkey.png'
-        ),
-    ),
 );

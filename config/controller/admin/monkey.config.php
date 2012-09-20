@@ -27,7 +27,6 @@ return array(
         'delete an item' => __('Delete a monkey'),
     ),
     'tab' => array(
-        'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',
         'labels' => array(
             'insert' => __('Add a monkey'),
             'blankSlate' => __('Translate a monkey'),

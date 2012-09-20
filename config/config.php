@@ -7,13 +7,6 @@ return array(
             'medium' => 'static/apps/noviusos_monkey/img/32/monkey.png',
             'big'    => 'static/apps/noviusos_monkey/img/64/monkey.png',
         ),
-        'tabs' => array(
-            'main' => array(
-                'label' => __('Monkey'),
-                'url' => 'admin/noviusos_monkey/appdesk',
-                'iconUrl' => 'static/apps/noviusos_monkey/img/32/monkey.png',
-             )
-        ),
         'actions' => array(
             //'crud' => array('Nos\Monkey\Model_Monkey', 'Nos\Monkey\Model_Species')
             'crud' => array(
@@ -27,7 +20,7 @@ return array(
                         'add' => __('Add a species'),
                     ),
                 )
-            ),
+            )
         )
     )
 );

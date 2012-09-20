@@ -12,10 +12,14 @@ return array(
     'name'    => 'Monkey : Novius OS Application Bootstrap',
     'version' => '0.1',
     'icon16' => 'static/apps/noviusos_monkey/img/16/monkey.png',
+    'icon64'  => 'static/apps/noviusos_monkey/img/64/monkey.png',
     'provider' => array(
         'name' => 'Provider',
     ),
     'namespace' => 'Nos\Monkey',
+    'permission' => array(
+
+    ),
     'launchers' => array(
         'provider_launcher' => array(
             'name'    => 'Monkey',

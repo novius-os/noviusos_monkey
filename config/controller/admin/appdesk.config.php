@@ -25,6 +25,29 @@ return array(
             'name' => __('Default view'),
         ),
     ),
+    'i18n' => array(
+        'addDropDown' => __('Select an action'),
+        'columns' => __('Columns'),
+        'showFiltersColumns' => __('Filters column header'),
+        'visibility' => __('Visibility'),
+        'settings' => __('Settings'),
+        'vertical' => __('Vertical'),
+        'horizontal' => __('Horizontal'),
+        'hidden' => __('Hidden'),
+        'item' => __('monkey'),
+        'items' => __('Monkeys'),
+        'showNbItems' => __('Showing {{x}} monkeys out of {{y}}'),
+        'showOneItem' => __('Show 1 monkey'),
+        'showNoItem' => __('No monkey'),
+        'showAll' => __('Show all monkeys'),
+        'views' => __('Views'),
+        'viewGrid' => __('Grid'),
+        'viewTreeGrid' => __('Tree grid'),
+        'viewThumbnails' => __('Thumbnails'),
+        'preview' => __('Preview'),
+        'loading' => __('Loading...'),
+        'languages' => __('Languages'),
+    ),
     'dataset' => array(
         'id' => 'monk_id',
         'name' => 'monk_name',
@@ -148,7 +171,7 @@ return array(
                 ),
             ),
             'inspectors' => array(
-                'speciess' => array(
+                'species' => array(
                     'reloadEvent' => 'Nos\\Monkey\\Model_Species',
                     'label' => __('Speciess'),
                     'url' => 'admin/noviusos_monkey/inspector/species/list',

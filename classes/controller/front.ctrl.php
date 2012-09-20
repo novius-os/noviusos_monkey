@@ -72,37 +72,48 @@ class Controller_Front extends Controller_Front_Application
     protected function init_pagination($page)
     {
         $this->current_page = $page;
-        $this->pagination   = new \Nos\Pagination();
+        $this->pagination = new \Nos\Pagination();
     }
 
     protected function display_list_monkey()
     {
         $list = $this->display_list();
 
-        $self   = $this;
+        $self = $this;
         $class = get_class($this);
 
         // Add surrounding stuff
-        return View::forge($this->config['list_view'], array(
-            'list'       => $list,
-            'pagination' => $this->pagination->create_links(function($page) use ($class, $self) {
-                if ($page == 1) {
-                    return mb_substr($self->main_controller->getEnhancedUrlPath(), 0, -1).'.html';
-                }
+        return View::forge(
+            $this->config['list_view'],
+            array(
+                'list' => $list,
+                'pagination' => $this->pagination->create_links(
+                    function ($page) use ($class, $self) {
+                        if ($page == 1) {
+                            return mb_substr($self->main_controller->getEnhancedUrlPath(), 0, -1).'.html';
+                        }
 
-                return $self->main_controller->getEnhancedUrlPath().'page/'.$page.'.html';
-            }),
-        ), false);
+                        return $self->main_controller->getEnhancedUrlPath().'page/'.$page.'.html';
+                    }
+                ),
+            ),
+            false
+        );
     }
 
     protected function display_list_species()
     {
         list(, $species) = $this->enhancer_url_segments;
 
-        $this->species = Model_Species::find('first', array('where' => array(
-            array('mksp_virtual_name', '=', $species),
-            array('mksp_lang', '=', $this->page_from->page_lang),
-        )));
+        $this->species = Model_Species::find(
+            'first',
+            array(
+                'where' => array(
+                    array('mksp_virtual_name', '=', $species),
+                    array('mksp_lang', '=', $this->page_from->page_lang),
+                )
+            )
+        );
 
         if (empty($this->species)) {
             throw new \Nos\NotFoundException();
@@ -110,21 +121,25 @@ class Controller_Front extends Controller_Front_Application
 
         $this->main_controller->setTitle($this->species->mksp_title);
 
-        $self  = $this;
+        $self = $this;
         $link_species = static::get_url_model($this->species);
-        $link_pagination = function($page) use ($self) {
+        $link_pagination = function ($page) use ($self) {
             return $self->species->url(array('page' => $page));
         };
 
         $list = $this->display_list('species');
 
         // Add surrounding stuff
-        return View::forge('front/list_species', array(
-            'list' => $list,
-            'pagination' => $this->pagination->create_links($link_pagination),
-            'species' => $this->species,
-            'link_species' => $link_species,
-        ), false);
+        return View::forge(
+            'front/list_species',
+            array(
+                'list' => $list,
+                'pagination' => $this->pagination->create_links($link_pagination),
+                'species' => $this->species,
+                'link_species' => $link_species,
+            ),
+            false
+        );
     }
 
     protected function display_list($context = 'monkeys')
@@ -141,11 +156,13 @@ class Controller_Front extends Controller_Front_Application
             $query->where(array('monk_species_id', $this->species->mksp_id));
         }
 
-        $this->pagination->set_config(array(
-            'total_items'    => $query->count(),
-            'per_page'       => $this->config['item_per_page'],
-            'current_page'   => $this->current_page,
-        ));
+        $this->pagination->set_config(
+            array(
+                'total_items' => $query->count(),
+                'per_page' => $this->config['item_per_page'],
+                'current_page' => $this->current_page,
+            )
+        );
 
         $query->rows_offset($this->pagination->offset);
         $query->rows_limit((int) $this->pagination->per_page);
@@ -169,7 +186,7 @@ class Controller_Front extends Controller_Front_Application
     {
         // Loop meta-data
         $length = count($items);
-        $index  = 1;
+        $index = 1;
         $output = array();
 
         // Events based on current iteration
@@ -234,7 +251,7 @@ class Controller_Front extends Controller_Front_Application
         foreach (preg_split('/[\s,-]+/u', $this->config['fields']) as $field) {
             $view = isset($this->views[$field]) ? $this->views[$field] : $this->config['fields_view'];
             $data['display'] = array($field => true);
-            $data['item']    = $monkey;
+            $data['item'] = $monkey;
             $view = static::get_view($view);
             $view->set($data);
             $view->set('item', $monkey, false);

@@ -29,17 +29,17 @@ return array(
         'id' => 'monk_id',
         'name' => 'monk_name',
         'species' => array(
-            'value' => function($item) {
+            'value' => function ($item) {
                 return $item->species->mksp_title;
             },
         ),
         'url' => array(
-            'value' => function($item) {
+            'value' => function ($item) {
                 return $item->url_canonical(array('preview' => true));
             },
         ),
         'actions' => array(
-            'visualise' => function($item) {
+            'visualise' => function ($item) {
                 $url = $item->url_canonical(array('preview' => true));
 
                 return !empty($url);
@@ -47,13 +47,15 @@ return array(
         ),
     ),
     'inputs' => array(
-        'monk_species_id' => function($value, $query) {
-            if ( is_array($value) && count($value) && $value[0]) {
-                $query->where(array('monk_species_id', 'in', $value));
-            }
+        'monk_species_id' =>
+            function ($value, $query)
+            {
+                if (is_array($value) && count($value) && $value[0]) {
+                    $query->where(array('monk_species_id', 'in', $value));
+                }
 
-            return $query;
-        },
+                return $query;
+            },
     ),
     'appdesk' => array(
         'tab' => array(

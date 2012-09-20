@@ -17,15 +17,17 @@ return array(
                     'useTitle' => __('Use monkey name'),
                 ),
                 \Nos\DataCatcher::TYPE_URL => array(
-                    'value' => function($monkey) {
-                        $urls = $monkey->urls();
-                        if (empty($urls)) {
-                            return null;
-                        }
-                        reset($urls);
+                    'value' =>
+                        function($monkey)
+                        {
+                            $urls = $monkey->urls();
+                            if (empty($urls)) {
+                                return null;
+                            }
+                            reset($urls);
 
-                        return key($urls);
-                    },
+                            return key($urls);
+                        },
                     'options' => function($post) {
                         return $post->urls();
                     },

@@ -27,7 +27,13 @@ return array(
             },
             'headerText' => __('Species'),
         ),
-        'published' => true
+        'published' => true,
+        'preview_url' => array(
+            'value' => function($item) {
+                return $item->preview_url();
+            },
+            'visible' => false
+        ),
         /*
         'url' => array(
             'value' => function($item) {

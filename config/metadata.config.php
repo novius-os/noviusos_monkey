@@ -45,4 +45,9 @@ return array(
             ),
         ),
     ),
+    'icons' => array(
+        16  => 'static/apps/noviusos_monkey/img/16/monkey.png',
+        32 => 'static/apps/noviusos_monkey/img/32/monkey.png',
+        64    => 'static/apps/noviusos_monkey/img/64/monkey.png',
+    ),
 );

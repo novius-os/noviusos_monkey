@@ -39,11 +39,11 @@ class Model_Monkey extends \Nos\Orm\Model
     );
 
     protected static $_behaviours = array(
-        'Nos\Orm_Behaviour_Translatable' => array(
+        'Nos\Orm_Behaviour_ContextableAndTwinnable' => array(
             'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
-            'lang_property'      => 'monk_lang',
-            'common_id_property' => 'monk_lang_common_id',
-            'is_main_property' => 'monk_lang_is_main',
+            'context_property'      => 'monk_context',
+            'common_id_property' => 'monk_context_common_id',
+            'is_main_property' => 'monk_context_is_main',
             'invariant_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Publishable' => array(
@@ -58,7 +58,7 @@ class Model_Monkey extends \Nos\Orm\Model
         ),
     );
 
-    public function get_possible_lang()
+    public function get_possible_context()
     {
         return array_keys(\Config::get('locales'));
     }

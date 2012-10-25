@@ -20,7 +20,7 @@ return array(
             'column'        => 'monk_name',
             'headerText'    => __('Name')
         ),
-        'lang' => true,
+        'context' => true,
         'species' => array(
             'value' => function($item) {
                 return $item->species->mksp_title;

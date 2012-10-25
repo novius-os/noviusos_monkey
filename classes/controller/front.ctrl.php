@@ -110,7 +110,7 @@ class Controller_Front extends Controller_Front_Application
             array(
                 'where' => array(
                     array('mksp_virtual_name', '=', $species),
-                    array('mksp_lang', '=', $this->page_from->page_lang),
+                    array('mksp_context', '=', $this->page_from->page_context),
                 )
             )
         );
@@ -151,7 +151,7 @@ class Controller_Front extends Controller_Front_Application
         if (!$this->main_controller->isPreview()) {
             $where[] = array('monk_published', '=', true);
         }
-        $query->where(array('monk_lang', $this->page_from->page_lang));
+        $query->where(array('monk_context', $this->page_from->page_context));
         if (!empty($this->species)) {
             $query->where(array('monk_species_id', $this->species->mksp_id));
         }
@@ -269,7 +269,7 @@ class Controller_Front extends Controller_Front_Application
         if (!is_array($where)) {
             $where = array(array('monk_virtual_name', '=', $where));
         }
-        $where[] = array('monk_lang', '=', $this->page_from->page_lang);
+        $where[] = array('monk_context', '=', $this->page_from->page_context);
 
         if (!$this->main_controller->isPreview()) {
             $where[] = array('monk_published', '=', true);

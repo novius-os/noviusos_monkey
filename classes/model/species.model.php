@@ -25,11 +25,11 @@ class Model_Species extends \Nos\Orm\Model
     );
 
     protected static $_behaviours = array(
-        'Nos\Orm_Behaviour_Translatable' => array(
+        'Nos\Orm_Behaviour_ContextableAndTwinnable' => array(
             'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
-            'lang_property'      => 'mksp_lang',
-            'common_id_property' => 'mksp_lang_common_id',
-            'is_main_property' => 'mksp_lang_is_main',
+            'context_property'      => 'mksp_context',
+            'common_id_property' => 'mksp_context_common_id',
+            'is_main_property' => 'mksp_context_is_main',
             'invariant_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Urlenhancer' => array(
@@ -41,7 +41,7 @@ class Model_Species extends \Nos\Orm\Model
         ),
     );
 
-    public function get_possible_lang()
+    public function get_possible_context()
     {
         return array_keys(\Config::get('locales'));
     }

@@ -18,7 +18,7 @@ class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud
 
         $species = Model_Species::find('all', array(
             'where' => array(
-                'mksp_lang' => $this->item->monk_lang,
+                'mksp_context' => $this->item->monk_context,
             ),
         ));
         $options = array();

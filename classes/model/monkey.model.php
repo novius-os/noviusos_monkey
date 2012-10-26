@@ -60,6 +60,6 @@ class Model_Monkey extends \Nos\Orm\Model
 
     public function get_possible_context()
     {
-        return array_keys(\Config::get('locales'));
+        return array_keys(\Nos\Tools_Context::contexts());
     }
 }

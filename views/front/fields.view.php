@@ -9,11 +9,11 @@
  */
 
 if (!empty($display['name'])) {
-    echo'<a href="'.$item->url().'">'.$item->monk_name.'</a>';
+    echo'<a href="'.$item->url().'">'.e($item->monk_name).'</a>';
 }
 
 if (!empty($display['summary']) && !empty($item->monk_summary)) {
-    echo nl2br($item->monk_summary);
+    echo nl2br(e($item->monk_summary));
 }
 
 if (!empty($display['thumbnail']) && !empty($item->medias->thumbnail)) {
@@ -25,5 +25,5 @@ if (!empty($display['wysiwyg']) && !empty($item->wysiwygs)) {
 }
 
 if (!empty($display['species'])) {
-    echo '<a href="'.$item->species->url().'">'.$item->species->mksp_title.'</a>';
+    echo '<a href="'.$item->species->url().'">'.e($item->species->mksp_title).'</a>';
 }

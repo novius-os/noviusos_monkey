@@ -25,7 +25,7 @@ class Model_Species extends \Nos\Orm\Model
     );
 
     protected static $_behaviours = array(
-        'Nos\Orm_Behaviour_ContextableAndTwinnable' => array(
+        'Nos\Orm_Behaviour_Twinnable' => array(
             'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
             'context_property'      => 'mksp_context',
             'common_id_property' => 'mksp_context_common_id',

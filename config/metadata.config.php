@@ -21,7 +21,7 @@ return array(
 
     ),
     'launchers' => array(
-        'provider_launcher' => array(
+        'noviusos_monkey' => array(
             'name'    => 'Monkey',
             'action' => array(
                 'action' => 'nosTabs',

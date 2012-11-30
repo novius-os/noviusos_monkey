@@ -81,7 +81,7 @@ return array(
     'fields' => array(
         'medias->thumbnail->medil_media_id' => array(
             'label' => '',
-            'widget' => 'Nos\Widget_Media',
+            'renderer' => 'Nos\Renderer_Media',
             'form' => array(
                 'title' => 'Thumbnail',
             ),
@@ -105,7 +105,7 @@ return array(
         ),
         'wysiwygs->content->wysiwyg_text' => array(
             'label' => __('Content'),
-            'widget' => 'Nos\Widget_Wysiwyg',
+            'renderer' => 'Nos\Renderer_Wysiwyg',
             'form' => array(
                 'style' => 'width: 100%; height: 500px;',
             ),
@@ -118,7 +118,7 @@ return array(
         ),
         'monk_virtual_name' => array(
             'label' => __('URL: '),
-            'widget' => 'Nos\Widget_Virtualname',
+            'renderer' => 'Nos\Renderer_Virtualname',
             'validation' => array(
                 'required',
                 'min_length' => array(2),

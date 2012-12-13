@@ -14,10 +14,4 @@ return array(
             'view' => 'noviusos_monkey::admin/enhancer_popup',
         ),
     ),
-    'preview' => array(
-        'params' => array(
-            'icon' => 'static/apps/noviusos_monkey/img/64/monkey.png',
-            'title' => __('Monkey'),
-        ),
-    ),
 );

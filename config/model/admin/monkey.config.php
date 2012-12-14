@@ -18,14 +18,14 @@ return array(
     'dataset' => array(
         'name' => array(
             'column'        => 'monk_name',
-            'headerText'    => __('Name')
+            'title'    => __('Name')
         ),
         'context' => true,
         'species' => array(
             'value' => function($item) {
                 return $item->species->mksp_title;
             },
-            'headerText' => __('Species'),
+            'title' => __('Species'),
         ),
         'published' => true,
         'preview_url' => array(

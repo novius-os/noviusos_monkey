@@ -16,7 +16,7 @@ return array(
     'dataset' => array(
         'title' => array(
             'column'        => 'mksp_title',
-            'headerText'    => __('Species')
+            'title'    => __('Species')
         ),
     )
 );

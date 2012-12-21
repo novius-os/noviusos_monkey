@@ -10,9 +10,7 @@
 
 return array(
     'name'    => 'Monkey : Novius OS Application Bootstrap',
-    'version' => '0.1',
-    'icon16' => 'static/apps/noviusos_monkey/img/16/monkey.png',
-    'icon64'  => 'static/apps/noviusos_monkey/img/64/monkey.png',
+    'version' => '0.2',
     'provider' => array(
         'name' => 'Provider',
     ),
@@ -30,7 +28,6 @@ return array(
                     'iconUrl' => 'static/apps/noviusos_monkey/img/32/monkey.png',
                 ),
             ),
-            'icon64'  => 'static/apps/noviusos_monkey/img/64/monkey.png',
         ),
     ),
     'enhancers' => array(

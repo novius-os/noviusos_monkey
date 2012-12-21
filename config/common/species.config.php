@@ -13,9 +13,8 @@ return array(
         'model' => 'Nos\Monkey\Model_Species',
         'order_by' => array('mksp_title' => 'ASC'),
     ),
-    'dataset' => array(
-        'title' => array(
-            'column'        => 'mksp_title',
+    'data_mapping' => array(
+        'mksp_title' => array(
             'title'    => __('Species')
         ),
     )

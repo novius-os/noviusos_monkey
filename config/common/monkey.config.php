@@ -16,7 +16,7 @@ return array(
         'species' => array(
             'title' => __('Species'),
             'value' => function($item) {
-                return $item->species->mksp_title;
+                return $item->species ? $item->species->mksp_title : __('None');
             },
         ),
         'monk_published' => array(

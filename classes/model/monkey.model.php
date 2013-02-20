@@ -57,9 +57,4 @@ class Model_Monkey extends \Nos\Orm\Model
             'virtual_name_property' => 'monk_virtual_name',
         ),
     );
-
-    public function get_possible_context()
-    {
-        return array_keys(\Nos\Tools_Context::contexts());
-    }
 }

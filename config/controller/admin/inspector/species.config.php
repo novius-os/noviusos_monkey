@@ -15,6 +15,6 @@ return array(
         'key'   => 'monk_species_id',
     ),
     'appdesk' => array(
-        'label' => __('Speciess'),
+        'label' => __('Species'),
     ),
 );

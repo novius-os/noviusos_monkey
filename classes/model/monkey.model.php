@@ -19,7 +19,10 @@ class Model_Monkey extends \Nos\Orm\Model
         'monk_id',
         'monk_context',
         'monk_context_common_id',
-        'monk_context_is_main',
+        'monk_context_is_main' => array(
+            'data_type' => 'int',
+            'default' => 0,
+        ),
         'monk_species_id',
         'monk_name',
         'monk_summary',
@@ -27,7 +30,10 @@ class Model_Monkey extends \Nos\Orm\Model
         'monk_updated_at',
         'monk_publication_start',
         'monk_publication_end',
-        'monk_published',
+        'monk_published' => array(
+            'data_type' => 'int',
+            'default' => 1,
+        ),
         'monk_virtual_name',
     );
 

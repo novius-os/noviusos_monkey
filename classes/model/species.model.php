@@ -19,7 +19,10 @@ class Model_Species extends \Nos\Orm\Model
         'mksp_id',
         'mksp_context',
         'mksp_context_common_id',
-        'mksp_context_is_main',
+        'mksp_context_is_main' => array(
+            'data_type' => 'int',
+            'default' => 0,
+        ),
         'mksp_title',
         'mksp_virtual_name',
         'mksp_created_at',

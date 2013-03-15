@@ -15,6 +15,17 @@ class Model_Species extends \Nos\Orm\Model
     protected static $_table_name = 'nos_monkey_species';
     protected static $_primary_key = array('mksp_id');
 
+    protected static $_properties = array(
+        'mksp_id',
+        'mksp_context',
+        'mksp_context_common_id',
+        'mksp_context_is_main',
+        'mksp_title',
+        'mksp_virtual_name',
+        'mksp_created_at',
+        'mksp_updated_at',
+    );
+
     protected static $_observers = array(
         'Orm\\Observer_CreatedAt' => array(
             'events' => array('before_insert'),

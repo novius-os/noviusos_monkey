@@ -15,6 +15,22 @@ class Model_Monkey extends \Nos\Orm\Model
     protected static $_table_name = 'nos_monkey';
     protected static $_primary_key = array('monk_id');
 
+    protected static $_properties = array(
+        'monk_id',
+        'monk_context',
+        'monk_context_common_id',
+        'monk_context_is_main',
+        'monk_species_id',
+        'monk_name',
+        'monk_summary',
+        'monk_created_at',
+        'monk_updated_at',
+        'monk_publication_start',
+        'monk_publication_end',
+        'monk_published',
+        'monk_virtual_name',
+    );
+
     protected static $_belongs_to = array(
         'species' => array(
             'key_from' => 'monk_species_id',

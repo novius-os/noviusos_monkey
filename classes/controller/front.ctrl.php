@@ -32,6 +32,7 @@ class Controller_Front extends Controller_Front_Application
 
     public function action_main($args = array())
     {
+
         $this->default_config = $this->config;
 
         $this->page_from = $this->main_controller->getPage();
@@ -146,15 +147,20 @@ class Controller_Front extends Controller_Front_Application
     {
         $this->config = \Arr::merge($this->config, $this->default_config['display_list'], $this->default_config["display_{$context}"]);
 
-        // Get the list of monkeys
-        $query = Model_Monkey::query()->related(array('species'));
+        $where = array(
+            array('monk_context', $this->page_from->page_context),
+        );
         if (!$this->main_controller->isPreview()) {
-            $where[] = array('monk_published', '=', true);
+            $where[] = array('published', true);
         }
-        $query->where(array('monk_context', $this->page_from->page_context));
         if (!empty($this->species)) {
-            $query->where(array('monk_species_id', $this->species->mksp_id));
+            $where[] = array('monk_species_id', $this->species->mksp_id);
         }
+
+        // Get the list of monkeys
+        $query = Model_Monkey::query(array(
+            'where' => $where,
+        ))->related(array('species'));
 
         $this->pagination->set_config(
             array(
@@ -272,7 +278,7 @@ class Controller_Front extends Controller_Front_Application
         $where[] = array('monk_context', '=', $this->page_from->page_context);
 
         if (!$this->main_controller->isPreview()) {
-            $where[] = array('monk_published', '=', true);
+            $where[] = array('published', true);
         }
 
         return Model_Monkey::find('first', array('where' => $where));

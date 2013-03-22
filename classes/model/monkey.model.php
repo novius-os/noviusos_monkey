@@ -69,7 +69,9 @@ class Model_Monkey extends \Nos\Orm\Model
             'invariant_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Publishable' => array(
-            'publication_bool_property' => 'monk_published',
+            'publication_state_property' => 'monk_published',
+            'publication_start_property' => 'monk_publication_start',
+            'publication_end_property' => 'monk_publication_end',
         ),
         'Nos\Orm_Behaviour_Urlenhancer' => array(
             'enhancers' => array('noviusos_monkey'),

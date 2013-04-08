@@ -15,26 +15,82 @@ class Model_Monkey extends \Nos\Orm\Model
     protected static $_table_name = 'nos_monkey';
     protected static $_primary_key = array('monk_id');
 
+    protected static $_title_property = 'monk_name';
     protected static $_properties = array(
-        'monk_id',
-        'monk_context',
-        'monk_context_common_id',
+        'monk_id' => array(
+            'default' => null,
+            'data_type' => 'int unsigned',
+            'null' => false,
+        ),
+        'monk_context' => array(
+            'default' => null,
+            'data_type' => 'varchar',
+            'null' => false,
+        ),
+        'monk_context_common_id' => array(
+            'default' => null,
+            'data_type' => 'int',
+            'null' => false,
+        ),
         'monk_context_is_main' => array(
-            'data_type' => 'int',
             'default' => 0,
+            'data_type' => 'tinyint',
+            'null' => false,
         ),
-        'monk_species_id',
-        'monk_name',
-        'monk_summary',
-        'monk_created_at',
-        'monk_updated_at',
-        'monk_publication_start',
-        'monk_publication_end',
-        'monk_published' => array(
+        'monk_species_id' => array(
+            'default' => null,
             'data_type' => 'int',
-            'default' => 1,
+            'null' => false,
         ),
-        'monk_virtual_name',
+        'monk_name' => array(
+            'default' => '',
+            'data_type' => 'varchar',
+            'null' => false,
+        ),
+        'monk_summary' => array(
+            'default' => null,
+            'data_type' => 'text',
+            'null' => true,
+            'convert_empty_to_null' => true,
+        ),
+        'monk_created_at' => array(
+            'default' => null,
+            'data_type' => 'datetime',
+            'null' => false,
+        ),
+        'monk_updated_at' => array(
+            'default' => null,
+            'data_type' => 'datetime',
+            'null' => false,
+        ),
+        'monk_publication_start' => array(
+            'default' => null,
+            'data_type' => 'datetime',
+            'null' => true,
+            'convert_empty_to_null' => true,
+        ),
+        'monk_publication_end' => array(
+            'default' => null,
+            'data_type' => 'datetime',
+            'null' => true,
+            'convert_empty_to_null' => true,
+        ),
+        'monk_published' => array(
+            'default' => 1,
+            'data_type' => 'tinyint',
+            'null' => false,
+        ),
+        'monk_virtual_name' => array(
+            'default' => null,
+            'data_type' => 'varchar',
+            'null' => false,
+        ),
+        'monk_summary2' => array(
+            'default' => null,
+            'data_type' => 'text',
+            'null' => true,
+            'convert_empty_to_null' => true,
+        ),
     );
 
     protected static $_belongs_to = array(

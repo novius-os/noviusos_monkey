@@ -15,18 +15,48 @@ class Model_Species extends \Nos\Orm\Model
     protected static $_table_name = 'nos_monkey_species';
     protected static $_primary_key = array('mksp_id');
 
+    protected static $_title_property = 'mksp_title';
     protected static $_properties = array(
-        'mksp_id',
-        'mksp_context',
-        'mksp_context_common_id',
-        'mksp_context_is_main' => array(
+        'mksp_id' => array(
+            'default' => null,
             'data_type' => 'int',
-            'default' => 0,
+            'null' => false,
         ),
-        'mksp_title',
-        'mksp_virtual_name',
-        'mksp_created_at',
-        'mksp_updated_at',
+        'mksp_context' => array(
+            'default' => null,
+            'data_type' => 'varchar',
+            'null' => false,
+        ),
+        'mksp_context_common_id' => array(
+            'default' => null,
+            'data_type' => 'int',
+            'null' => false,
+        ),
+        'mksp_context_is_main' => array(
+            'default' => 0,
+            'data_type' => 'tinyint',
+            'null' => false,
+        ),
+        'mksp_title' => array(
+            'default' => '',
+            'data_type' => 'varchar',
+            'null' => false,
+        ),
+        'mksp_virtual_name' => array(
+            'default' => null,
+            'data_type' => 'varchar',
+            'null' => false,
+        ),
+        'mksp_created_at' => array(
+            'default' => null,
+            'data_type' => 'datetime',
+            'null' => false,
+        ),
+        'mksp_updated_at' => array(
+            'default' => null,
+            'data_type' => 'datetime',
+            'null' => false,
+        ),
     );
 
     protected static $_observers = array(

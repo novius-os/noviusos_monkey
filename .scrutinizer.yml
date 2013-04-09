@@ -3,4 +3,3 @@ tools:
         command: wget -O /tmp/noviusos.xml http://raw.github.com/novius-os/ci/master/0.2/phpcs/ruleset.xml;phpcs -n
         config:
             standard:   /tmp/noviusos.xml
-            

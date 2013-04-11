@@ -10,7 +10,8 @@
 
 namespace Nos\Monkey;
 
-class Model_Monkey extends \Nos\Orm\Model {
+class Model_Monkey extends \Nos\Orm\Model
+{
     protected static $_table_name = 'nos_monkey';
     protected static $_primary_key = array('monk_id');
 

@@ -61,12 +61,10 @@ class Model_Species extends \Nos\Orm\Model
 
     protected static $_observers = array(
         'Orm\\Observer_CreatedAt' => array(
-            'events' => array('before_insert'),
             'mysql_timestamp' => true,
             'property' => 'mksp_created_at',
         ),
         'Orm\\Observer_UpdatedAt' => array(
-            'events' => array('before_save'),
             'mysql_timestamp' => true,
             'property' => 'mksp_updated_at',
         ),
@@ -74,7 +72,6 @@ class Model_Species extends \Nos\Orm\Model
 
     protected static $_behaviours = array(
         'Nos\Orm_Behaviour_Twinnable' => array(
-            'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
             'context_property'      => 'mksp_context',
             'common_id_property' => 'mksp_context_common_id',
             'is_main_property' => 'mksp_context_is_main',
@@ -84,7 +81,6 @@ class Model_Species extends \Nos\Orm\Model
             'enhancers' => array('noviusos_monkey'),
         ),
         'Nos\Orm_Behaviour_Virtualname' => array(
-            'events' => array('before_save', 'after_save'),
             'virtual_name_property' => 'mksp_virtual_name',
         ),
     );

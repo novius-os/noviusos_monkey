@@ -105,12 +105,10 @@ class Model_Monkey extends \Nos\Orm\Model
 
     protected static $_observers = array(
         'Orm\\Observer_CreatedAt' => array(
-            'events' => array('before_insert'),
             'mysql_timestamp' => true,
             'property' => 'monk_created_at',
         ),
         'Orm\\Observer_UpdatedAt' => array(
-            'events' => array('before_save'),
             'mysql_timestamp' => true,
             'property' => 'monk_updated_at',
         ),
@@ -118,7 +116,6 @@ class Model_Monkey extends \Nos\Orm\Model
 
     protected static $_behaviours = array(
         'Nos\Orm_Behaviour_Twinnable' => array(
-            'events' => array('before_insert', 'after_insert', 'before_save', 'after_delete', 'change_parent'),
             'context_property'      => 'monk_context',
             'common_id_property' => 'monk_context_common_id',
             'is_main_property' => 'monk_context_is_main',
@@ -133,7 +130,6 @@ class Model_Monkey extends \Nos\Orm\Model
             'enhancers' => array('noviusos_monkey'),
         ),
         'Nos\Orm_Behaviour_Virtualname' => array(
-            'events' => array('before_save', 'after_save'),
             'virtual_name_property' => 'monk_virtual_name',
         ),
     );

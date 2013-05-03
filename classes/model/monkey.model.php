@@ -85,12 +85,6 @@ class Model_Monkey extends \Nos\Orm\Model
             'data_type' => 'varchar',
             'null' => false,
         ),
-        'monk_summary2' => array(
-            'default' => null,
-            'data_type' => 'text',
-            'null' => true,
-            'convert_empty_to_null' => true,
-        ),
     );
 
     protected static $_belongs_to = array(
@@ -122,9 +116,9 @@ class Model_Monkey extends \Nos\Orm\Model
             'invariant_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Publishable' => array(
-            'publication_state_property' => 'monk_published',
-            'publication_start_property' => 'monk_publication_start',
-            'publication_end_property' => 'monk_publication_end',
+            'publication_state_property'    => 'monk_published',
+            'publication_start_property'    => 'monk_publication_start',
+            'publication_end_property'      => 'monk_publication_end',
         ),
         'Nos\Orm_Behaviour_Urlenhancer' => array(
             'enhancers' => array('noviusos_monkey'),

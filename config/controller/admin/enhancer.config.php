@@ -8,8 +8,13 @@
  * @link http://www.novius-os.org
  */
 
-namespace Nos\Monkey;
-
-class Controller_Admin_Application extends \Nos\Controller_Admin_Enhancer
-{
-}
+return array(
+    'fields' => array(
+        'item_per_page' => array(
+            'label' => __('Monkey per page:'),
+            'form' => array(
+                'value' => 10,
+            ),
+        ),
+    ),
+);

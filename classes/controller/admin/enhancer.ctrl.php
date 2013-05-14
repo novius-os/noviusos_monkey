@@ -8,10 +8,8 @@
  * @link http://www.novius-os.org
  */
 
-return array(
-    'popup' => array(
-        'layout' => array(
-            'view' => 'noviusos_monkey::admin/enhancer_popup',
-        ),
-    ),
-);
+namespace Nos\Monkey;
+
+class Controller_Admin_Enhancer extends \Nos\Controller_Admin_Enhancer
+{
+}

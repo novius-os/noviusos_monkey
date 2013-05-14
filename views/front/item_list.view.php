@@ -7,14 +7,12 @@
  *             http://www.gnu.org/licenses/agpl-3.0.html
  * @link http://www.novius-os.org
  */
-
-return array(
-    'fields' => array(
-        'item_per_page' => array(
-            'label' => __('Monkey per page:'),
-            'form' => array(
-                'value' => 10,
-            ),
-        ),
-    ),
-);
+?>
+<div class="monkey">
+    <div class="thumbnail">
+      <?= $thumbnail ?>
+    </div>
+    <h2><?= $name ?></h2>
+    <div class="species"><?= $species ?></div>
+    <div style="clear:left;"></div>
+</div>

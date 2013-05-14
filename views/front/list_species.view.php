@@ -7,9 +7,9 @@
  *             http://www.gnu.org/licenses/agpl-3.0.html
  * @link http://www.novius-os.org
  */
-
-namespace Nos\Monkey;
-
-class Controller_Admin_Enhancer extends \Nos\Controller_Admin_Enhancer
-{
-}
+?>
+<div class="monkeys">
+    <h1><a href="<?= $species->url() ?>"><?= $species->mksp_title ?></a></h1>
+    <?= $list ?>
+    <?= $pagination ?>
+</div>

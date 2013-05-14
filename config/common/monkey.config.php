@@ -22,6 +22,7 @@ return array(
         'monk_published' => array(
             'title' => __('Status'),
             'method' => 'publication_status',
+            'isSafeHtml' => true,
             'multiContextHide' => true,
         ),
         'preview_url' => array(

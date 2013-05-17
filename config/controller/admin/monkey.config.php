@@ -130,7 +130,7 @@ return array(
                 'type' => 'submit',
                 'tag' => 'button',
                 'value' => __('Save'),
-                'class' => 'primary',
+                'class' => 'ui-priority-primary',
                 'data-icon' => 'check',
             ),
         ),

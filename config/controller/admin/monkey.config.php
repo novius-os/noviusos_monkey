@@ -36,7 +36,7 @@ return array(
         'title' => 'monk_name',
         'medias' => array('medias->thumbnail->medil_media_id'),
         'large' => true,
-        'subtitle' => array('monk_species_id'),
+        'subtitle' => array('monk_species_common_id'),
         'content' => array(
             'expander' => array(
                 'view' => 'nos::form/expander',
@@ -108,7 +108,7 @@ return array(
                 'style' => 'width: 100%; height: 500px;',
             ),
         ),
-        'monk_species_id' => array(
+        'monk_species_common_id' => array(
             'label' => 'Species: ',
             'form' => array(
                 'type' => 'select',

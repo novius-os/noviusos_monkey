@@ -16,16 +16,12 @@ class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud
     {
         $fieldset = parent::fieldset($fieldset);
 
-        $species = Model_Species::find('all', array(
-            'where' => array(
-                'mksp_context' => $this->item->monk_context,
-            ),
-        ));
+        $species = Model_Species::findMainOrContext($this->item->monk_context);
         $options = array();
         foreach ($species as $sp) {
-            $options[$sp->mksp_id] = $sp->mksp_title;
+            $options[$sp->mksp_context_common_id] = $sp->mksp_title;
         }
-        $fieldset->field('monk_species_id')->set_options($options);
+        $fieldset->field('monk_species_common_id')->set_options($options);
 
         return $fieldset;
     }

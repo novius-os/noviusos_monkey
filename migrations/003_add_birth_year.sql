@@ -1,0 +1,1 @@
+ALTER TABLE `nos_monkey` ADD `monk_birth_year` INT( 4 ) NULL

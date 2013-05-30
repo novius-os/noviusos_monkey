@@ -59,17 +59,15 @@ return array(
         ),
         'menu' => array(
             'expander' => array(
-                'view' => 'nos::form/expander',
+                'view' => 'nos::form/accordion',
                 'params' => array(
-                    'title'   => __('Meta'),
-                    'options' => array(
-                        'allowExpand' => false,
-                    ),
-                    'content' => array(
-                        'view' => 'nos::form/fields',
-                        'params' => array(
+                    //'classes' => 'notransform',
+                    'accordions' => array(
+                        'main' => array(
+                            'title'  => __('Meta'),
                             'fields' => array(
                                 'monk_virtual_name',
+                                'monk_birth_year',
                             ),
                         ),
                     ),
@@ -122,6 +120,17 @@ return array(
             'validation' => array(
                 'required',
                 'min_length' => array(2),
+            ),
+        ),
+        'monk_birth_year' => array(
+            'label' => __('Birth year: '),
+            'form' => array(
+                'type' => 'number',
+            ),
+
+            'validation' => array(
+                'min_length' => array(4),
+                'max_length' => array(4),
             ),
         ),
         'save' => array(

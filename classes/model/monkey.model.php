@@ -132,4 +132,8 @@ class Model_Monkey extends \Nos\Orm\Model
             'virtual_name_property' => 'monk_virtual_name',
         ),
     );
+
+    public static $shared_medias_context = array(
+        'thumbnail',
+    );
 }

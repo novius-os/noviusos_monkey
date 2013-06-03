@@ -1,6 +1,6 @@
 <?php
 namespace Nos\Monkey\Migrations;
 
-class Add_birth_year extends \Nos\Migration
+class Add_Birth_Year extends \Nos\Migration
 {
 }

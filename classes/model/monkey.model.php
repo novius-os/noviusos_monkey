@@ -37,7 +37,7 @@ class Model_Monkey extends \Nos\Orm\Model
             'data_type' => 'tinyint',
             'null' => false,
         ),
-        'monk_species_id' => array(
+        'monk_species_common_id' => array(
             'default' => null,
             'data_type' => 'int',
             'null' => false,
@@ -92,11 +92,10 @@ class Model_Monkey extends \Nos\Orm\Model
         ),
     );
 
-    protected static $_belongs_to = array(
+    protected static $_twinnable_belongs_to = array(
         'species' => array(
-            'key_from' => 'monk_species_id',
+            'key_from' => 'monk_species_common_id',
             'model_to' => 'Nos\Monkey\Model_Species',
-            'key_to' => 'mksp_id',
             'cascade_save' => false,
             'cascade_delete' => false,
         ),
@@ -118,7 +117,7 @@ class Model_Monkey extends \Nos\Orm\Model
             'context_property'      => 'monk_context',
             'common_id_property' => 'monk_context_common_id',
             'is_main_property' => 'monk_context_is_main',
-            'invariant_fields'   => array('monk_birth_year'),
+            'invariant_fields'   => array('monk_species_common_id', 'monk_birth_year'),
         ),
         'Nos\Orm_Behaviour_Publishable' => array(
             'publication_state_property'    => 'monk_published',

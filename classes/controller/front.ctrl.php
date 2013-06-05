@@ -154,7 +154,7 @@ class Controller_Front extends Controller_Front_Application
             $where[] = array('published', true);
         }
         if (!empty($this->species)) {
-            $where[] = array('monk_species_id', $this->species->mksp_id);
+            $where[] = array('monk_species_common_id', $this->species->mksp_context_common_id);
         }
 
         // Get the list of monkeys

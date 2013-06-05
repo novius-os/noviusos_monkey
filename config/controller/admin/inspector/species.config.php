@@ -12,7 +12,7 @@
 return array(
     'model' => 'Nos\Monkey\Model_Species',
     'input' => array(
-        'key'   => 'monk_species_id',
+        'key'   => 'monk_species_common_id',
     ),
     'appdesk' => array(
         'label' => __('Species'),

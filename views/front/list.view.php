@@ -8,7 +8,7 @@
  * @link http://www.novius-os.org
  */
 ?>
-<div class="monkeys">
+<div class="noviusos_monkey noviusos_enhancer monkeys">
     <?= $list ?>
     <?= $pagination ?>
 </div>

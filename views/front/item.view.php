@@ -9,7 +9,7 @@
  */
 
 ?>
-<div class="monkey">
+<div class="noviusos_monkey noviusos_enhancer monkey">
     <div class="thumbnail">
         <?= $thumbnail ?>
     </div>

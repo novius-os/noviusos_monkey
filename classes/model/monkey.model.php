@@ -117,7 +117,7 @@ class Model_Monkey extends \Nos\Orm\Model
             'context_property'      => 'monk_context',
             'common_id_property' => 'monk_context_common_id',
             'is_main_property' => 'monk_context_is_main',
-            'invariant_fields'   => array('monk_species_common_id', 'monk_birth_year'),
+            'common_fields'   => array('monk_species_common_id', 'monk_birth_year'),
         ),
         'Nos\Orm_Behaviour_Publishable' => array(
             'publication_state_property'    => 'monk_published',

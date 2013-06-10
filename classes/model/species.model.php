@@ -75,7 +75,7 @@ class Model_Species extends \Nos\Orm\Model
             'context_property'      => 'mksp_context',
             'common_id_property' => 'mksp_context_common_id',
             'is_main_property' => 'mksp_context_is_main',
-            'invariant_fields'   => array(),
+            'common_fields'   => array(),
         ),
         'Nos\Orm_Behaviour_Urlenhancer' => array(
             'enhancers' => array('noviusos_monkey'),

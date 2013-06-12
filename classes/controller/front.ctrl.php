@@ -295,19 +295,22 @@ class Controller_Front extends Controller_Front_Application
         return clone $views[$which];
     }
 
-    public static function get_url_model($item, $params = array())
+    public static function getUrlEnhanced($params = array())
     {
-        $model = get_class($item);
-        $page = isset($params['page']) ? $params['page'] : 1;
+        $item = \Arr::get($params, 'item', false);
+        if ($item) {
+            $model = get_class($item);
+            $page = \Arr::get($params, 'page', 1);
 
-        switch ($model) {
-            case 'Nos\Monkey\Model_Monkey' :
-                return urlencode($item->monk_virtual_name).'.html';
-                break;
+            switch ($model) {
+                case 'Nos\Monkey\Model_Monkey' :
+                    return urlencode($item->monk_virtual_name).'.html';
+                    break;
 
-            case 'Nos\Monkey\Model_Species' :
-                return 'species/'.urlencode($item->mksp_virtual_name).($page > 1 ? '/'.$page : '').'.html';
-                break;
+                case 'Nos\Monkey\Model_Species' :
+                    return 'species/'.urlencode($item->mksp_virtual_name).($page > 1 ? '/'.$page : '').'.html';
+                    break;
+            }
         }
 
         return false;

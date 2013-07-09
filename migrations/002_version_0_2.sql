@@ -1,3 +1,12 @@
+/**
+ * NOVIUS OS - Web OS for digital communication
+ *
+ * @copyright  2011 Novius
+ * @license    GNU Affero General Public License v3 or (at your option) any later version
+ *             http://www.gnu.org/licenses/agpl-3.0.html
+ * @link http://www.novius-os.org
+ */
+
 ALTER TABLE `nos_monkey` CHANGE `monk_lang` `monk_context` VARCHAR( 25 ) NOT NULL, CHANGE `monk_lang_common_id` `monk_context_common_id` INT( 11 ) NOT NULL, CHANGE `monk_lang_is_main` `monk_context_is_main` TINYINT( 1 ) NOT NULL DEFAULT '0';
 ALTER TABLE `nos_monkey_species` CHANGE `mksp_lang` `mksp_context` VARCHAR( 25 ) NOT NULL, CHANGE `mksp_lang_common_id` `mksp_context_common_id` INT( 11 ) NOT NULL, CHANGE `mksp_lang_is_main` `mksp_context_is_main` TINYINT( 1 ) NOT NULL DEFAULT '0';
 

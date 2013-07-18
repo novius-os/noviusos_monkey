@@ -9,7 +9,7 @@
  */
 ?>
 <div class="noviusos_monkey noviusos_enhancer monkeys">
-    <h1><a href="<?= $species->url() ?>"><?= $species->mksp_title ?></a></h1>
+    <h1><?= $species->htmlAnchor() ?></h1>
     <?= $list ?>
     <?= $pagination ?>
 </div>

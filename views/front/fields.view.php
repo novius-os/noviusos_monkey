@@ -9,7 +9,7 @@
  */
 
 if (!empty($display['name'])) {
-    echo'<a href="'.$item->url().'">'.e($item->monk_name).'</a>';
+    echo $item->htmlAnchor();
 }
 
 if (!empty($display['summary']) && !empty($item->monk_summary)) {
@@ -25,5 +25,5 @@ if (!empty($display['wysiwyg']) && !empty($item->wysiwygs)) {
 }
 
 if (!empty($display['species'])) {
-    echo '<a href="'.$item->species->url().'">'.e($item->species->mksp_title).'</a>';
+    echo $item->species->htmlAnchor();
 }

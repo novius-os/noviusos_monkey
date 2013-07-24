@@ -304,11 +304,11 @@ class Controller_Front extends Controller_Front_Application
 
             switch ($model) {
                 case 'Nos\Monkey\Model_Monkey' :
-                    return urlencode($item->monk_virtual_name).'.html';
+                    return $item->monk_virtual_name.'.html';
                     break;
 
                 case 'Nos\Monkey\Model_Species' :
-                    return 'species/'.urlencode($item->mksp_virtual_name).($page > 1 ? '/'.$page : '').'.html';
+                    return 'species/'.$item->mksp_virtual_name.($page > 1 ? '/'.$page : '').'.html';
                     break;
             }
         }

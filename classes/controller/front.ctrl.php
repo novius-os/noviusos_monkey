@@ -123,7 +123,7 @@ class Controller_Front extends Controller_Front_Application
         $this->main_controller->setTitle($this->species->mksp_title);
 
         $self = $this;
-        $link_species = static::get_url_model($this->species);
+        $link_species = static::getUrlEnhanced(array('item' => $this->species));
         $link_pagination = function ($page) use ($self) {
             return $self->species->url(array('page' => $page));
         };

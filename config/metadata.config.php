@@ -35,7 +35,8 @@ return array(
             'title' => 'Monkey',
             'desc'  => '',
             //'enhancer' => 'noviusos_monkey/front',
-            'urlEnhancer' => 'noviusos_monkey/front/main',
+            'urlEnhancer' => 'noviusos_monkey/front',
+            'use_routes' => true,
             'iconUrl' => 'static/apps/noviusos_monkey/img/16/monkey.png',
             'dialog' => array(
                 'contentUrl' => 'admin/noviusos_monkey/enhancer/popup',

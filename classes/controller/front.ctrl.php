@@ -30,44 +30,37 @@ class Controller_Front extends Controller_Front_Application
 
     protected $enhancer_url_segments;
 
-    public function action_main($args = array())
+    public function before()
     {
-
+        parent::before();
         $this->default_config = $this->config;
 
         $this->page_from = $this->main_controller->getPage();
 
         $this->merge_config('config');
 
-        if (isset($args['item_per_page'])) {
-            $this->config['item_per_page'] = $args['item_per_page'];
+        if (isset($this->enhancer_args['item_per_page'])) {
+            $this->config['item_per_page'] = $this->enhancer_args['item_per_page'];
         }
 
         $this->main_controller->addCss('static/apps/noviusos_monkey/css/front.css');
+    }
 
-        $enhancer_url = $this->main_controller->getEnhancerUrl();
-        if (!empty($enhancer_url)) {
-            $this->enhancer_url_segments = explode('/', $enhancer_url);
-            $segments = $this->enhancer_url_segments;
-
-            if (empty($segments[1])) {
-                return $this->display_monkey();
-            } elseif ($segments[0] === 'page') {
-                $this->init_pagination(empty($segments[1]) ? 1 : $segments[1]);
-
-                return $this->display_list_monkey();
-            } elseif ($segments[0] === 'species') {
-                $this->init_pagination(!empty($segments[2]) ? $segments[2] : 1);
-
-                return $this->display_list_species($args);
-            }
-
-            throw new \Nos\NotFoundException();
-        }
-
-        $this->init_pagination(1);
-
+    public function action_list($page = 1)
+    {
+        $this->init_pagination($page);
         return $this->display_list_monkey();
+    }
+
+    public function action_item($item_name)
+    {
+        return $this->display_monkey($item_name);
+    }
+
+    public function action_list_species($item_name, $page = 1)
+    {
+        $this->init_pagination($page);
+        return $this->display_list_species($item_name);
     }
 
     protected function init_pagination($page)
@@ -102,10 +95,8 @@ class Controller_Front extends Controller_Front_Application
         );
     }
 
-    protected function display_list_species()
+    protected function display_list_species($species)
     {
-        list(, $species) = $this->enhancer_url_segments;
-
         $this->species = Model_Species::find(
             'first',
             array(
@@ -122,10 +113,10 @@ class Controller_Front extends Controller_Front_Application
 
         $this->main_controller->setTitle($this->species->mksp_title);
 
-        $self = $this;
+        $species = $this->species;
         $link_species = static::getUrlEnhanced(array('item' => $this->species));
-        $link_pagination = function ($page) use ($self) {
-            return $self->species->url(array('page' => $page));
+        $link_pagination = function ($page) use ($species) {
+            return $species->url(array('page' => $page));
         };
 
         $list = $this->display_list('species');
@@ -230,10 +221,8 @@ class Controller_Front extends Controller_Front_Application
      *
      * @throws \Nos\NotFoundException
      */
-    protected function display_monkey()
+    protected function display_monkey($item_virtual_name)
     {
-        list($item_virtual_name) = $this->enhancer_url_segments;
-
         $monkey = $this->get_monkey($item_virtual_name);
 
         if (empty($monkey)) {

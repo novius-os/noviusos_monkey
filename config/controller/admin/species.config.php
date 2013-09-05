@@ -58,7 +58,6 @@ return array (
                 ),
             ),
         ),
-        'save' => 'save',
     ),
     'fields' => array(
         'mksp_title' => array (
@@ -78,16 +77,6 @@ return array (
             'validation' => array(
                 'required',
                 'min_length' => array(2),
-            ),
-        ),
-        'save' => array(
-            'label' => '',
-            'form' => array(
-                'type' => 'submit',
-                'tag' => 'button',
-                'value' => __('Save'),
-                'class' => 'ui-priority-primary',
-                'data-icon' => 'check',
             ),
         ),
     ),

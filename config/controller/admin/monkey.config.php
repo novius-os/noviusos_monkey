@@ -74,7 +74,6 @@ return array(
                 ),
             ),
         ),
-        'save' => 'save',
     ),
     'fields' => array(
         'medias->thumbnail->medil_media_id' => array(
@@ -131,16 +130,6 @@ return array(
             'validation' => array(
                 'min_length' => array(4),
                 'max_length' => array(4),
-            ),
-        ),
-        'save' => array(
-            'label' => '',
-            'form' => array(
-                'type' => 'submit',
-                'tag' => 'button',
-                'value' => __('Save'),
-                'class' => 'ui-priority-primary',
-                'data-icon' => 'check',
             ),
         ),
     ),

@@ -10,7 +10,7 @@
 
 return array(
     'name'    => 'Monkey : Novius OS Application Bootstrap',
-    'version' => 'chiba.2',
+    'version' => 'chiba.2.1',
     'provider' => array(
         'name' => 'Provider',
     ),

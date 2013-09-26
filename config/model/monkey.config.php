@@ -17,8 +17,7 @@ return array(
                 ),
                 \Nos\DataCatcher::TYPE_URL => array(
                     'value' =>
-                        function($monkey)
-                        {
+                        function ($monkey) {
                             $urls = $monkey->urls();
                             if (empty($urls)) {
                                 return null;
@@ -27,23 +26,23 @@ return array(
 
                             return key($urls);
                         },
-                    'options' => function($post) {
+                    'options' => function ($post) {
                         return $post->urls();
                     },
                 ),
                 \Nos\DataCatcher::TYPE_TEXT => array(
-                    'value' => function($monkey) {
+                    'value' => function ($monkey) {
                         return $monkey->monk_summary;
                     },
                     'useTitle' => __('Use monkey summary'),
                 ),
                 \Nos\DataCatcher::TYPE_IMAGE => array(
-                    'value' => function($monkey) {
+                    'value' => function ($monkey) {
                         $possible = $monkey->possible_medias();
 
                         return Arr::get(array_keys($possible), 0, null);
                     },
-                    'options' => function($monkey) {
+                    'options' => function ($monkey) {
                         return $monkey->possible_medias();
                     },
                 ),

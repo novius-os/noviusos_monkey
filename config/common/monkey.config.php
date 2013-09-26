@@ -15,7 +15,7 @@ return array(
         'context' => true,
         'species' => array(
             'title' => __('Species'),
-            'value' => function($item) {
+            'value' => function ($item) {
                 return $item->species ? $item->species->mksp_title : __('None');
             },
         ),

@@ -25,5 +25,4 @@ class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud
 
         return $fieldset;
     }
-
 }

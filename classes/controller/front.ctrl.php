@@ -303,11 +303,11 @@ class Controller_Front extends Controller_Front_Application
             $page = \Arr::get($params, 'page', 1);
 
             switch ($model) {
-                case 'Nos\Monkey\Model_Monkey' :
+                case 'Nos\Monkey\Model_Monkey':
                     return $item->monk_virtual_name.'.html';
                     break;
 
-                case 'Nos\Monkey\Model_Species' :
+                case 'Nos\Monkey\Model_Species':
                     return 'species/'.$item->mksp_virtual_name.($page > 1 ? '/'.$page : '').'.html';
                     break;
             }

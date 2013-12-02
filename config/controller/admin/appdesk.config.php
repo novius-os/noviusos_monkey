@@ -17,8 +17,14 @@ return array(
     'i18n' => array(
         'item' => __('monkey'),
         'items' => __('monkeys'),
-        'showNbItems' => __('Showing {{x}} monkeys out of {{y}}'),
-        'showOneItem' => __('Showing 1 monkey'),
+        'NItems' => n__(
+            '1 monkey',
+            '{{count}} monkeys'
+        ),
+        'showNbItems' => n__(
+            'Showing 1 monkey out of {{y}}',
+            'Showing {{x}} monkeys out of {{y}}'
+        ),
         'showNoItem' => __('No monkey'),
         'showAll' => __('Showing all monkeys'),
     ),

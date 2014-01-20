@@ -92,6 +92,14 @@ class Model_Monkey extends \Nos\Orm\Model
         ),
     );
 
+    protected static $_has_one = array();
+    protected static $_belongs_to  = array();
+    protected static $_has_many  = array();
+    protected static $_many_many = array();
+    protected static $_twinnable_has_one = array();
+    protected static $_twinnable_has_many = array();
+    protected static $_twinnable_many_many = array();
+
     protected static $_twinnable_belongs_to = array(
         'species' => array(
             'key_from' => 'monk_species_common_id',

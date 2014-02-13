@@ -120,7 +120,11 @@ class Controller_Front extends Controller_Front_Application
             throw new \Nos\NotFoundException();
         }
 
-        $this->main_controller->setTitle($this->species->mksp_title);
+        $title = __('Species: {{species}}');
+        $this->main_controller->setItemDisplayed($this->species, array(), array(
+            'title' => ':page_title - '.strtr($title, array('{{species}}' => ':title')),
+            'h1' => strtr($title, array('{{species}}' => ':h1')),
+        ));
 
         $species = $this->species;
         $link_species = static::getUrlEnhanced(array('item' => $this->species));
@@ -242,8 +246,15 @@ class Controller_Front extends Controller_Front_Application
 
         $this->merge_config('display_monkey');
 
-        $this->main_controller->setTitle($monkey->monk_name);
-        $this->main_controller->setMetaDescription($monkey->monk_summary);
+        $this->main_controller->setItemDisplayed(
+            $monkey,
+            array(
+                'meta_description' => $monkey->monk_summary,
+            ),
+            array(
+                'title' => ':page_title - :title',
+            )
+        );
 
         echo $this->monkey($monkey);
     }

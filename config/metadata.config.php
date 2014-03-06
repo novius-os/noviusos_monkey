@@ -10,7 +10,7 @@
 
 return array(
     'name'    => 'Monkey : Novius OS Application Bootstrap',
-    'version' => 'dubrovka',
+    'version' => '4.1 (Dubrovka)',
     'provider' => array(
         'name' => 'Provider',
     ),

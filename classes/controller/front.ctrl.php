@@ -81,7 +81,6 @@ class Controller_Front extends Controller_Front_Application
         $list = $this->display_list();
 
         $self = $this;
-        $class = get_class($this);
 
         // Add surrounding stuff
         return View::forge(
@@ -89,12 +88,14 @@ class Controller_Front extends Controller_Front_Application
             array(
                 'list' => $list,
                 'pagination' => $this->pagination->create_links(
-                    function ($page) use ($class, $self) {
-                        if ($page == 1) {
-                            return mb_substr($self->main_controller->getEnhancedUrlPath(), 0, -1).'.html';
+                    function ($page) use ($self) {
+                        $main_controller = \Nos\Nos::main_controller();
+                        $url = $main_controller->getContextUrl().$main_controller->getEnhancedUrlPath();
+                        $urlEnhanced = $self::getUrlEnhanced(array('page' => $page));
+                        if (empty($urlEnhanced)) {
+                            return substr($url, 0, -1).'.html';
                         }
-
-                        return $self->main_controller->getEnhancedUrlPath().'page/'.$page.'.html';
+                        return $url.$urlEnhanced;
                     }
                 ),
             ),
@@ -309,9 +310,9 @@ class Controller_Front extends Controller_Front_Application
     public static function getUrlEnhanced($params = array())
     {
         $item = \Arr::get($params, 'item', false);
+        $page = \Arr::get($params, 'page', 1);
         if ($item) {
             $model = get_class($item);
-            $page = \Arr::get($params, 'page', 1);
 
             switch ($model) {
                 case 'Nos\Monkey\Model_Monkey':
@@ -321,9 +322,12 @@ class Controller_Front extends Controller_Front_Application
                 case 'Nos\Monkey\Model_Species':
                     return 'species/'.$item->mksp_virtual_name.($page > 1 ? '/'.$page : '').'.html';
                     break;
+
+                default:
+                    return false;
             }
         }
 
-        return false;
+        return $page == 1 ? '' : 'page/'.$page.'.html';
     }
 }

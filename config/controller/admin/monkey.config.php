@@ -34,7 +34,7 @@ return array(
     ),
     'layout' => array(
         'title' => 'monk_name',
-        'medias' => array('medias->thumbnail->medil_media_id'),
+        'medias' => array('shared_medias_context->thumbnail->medil_media_id'),
         'large' => true,
         'subtitle' => array('monk_species_common_id'),
         'content' => array(
@@ -76,7 +76,7 @@ return array(
         ),
     ),
     'fields' => array(
-        'medias->thumbnail->medil_media_id' => array(
+        'shared_medias_context->thumbnail->medil_media_id' => array(
             'label' => '',
             'renderer' => 'Nos\Media\Renderer_Media',
             'form' => array(

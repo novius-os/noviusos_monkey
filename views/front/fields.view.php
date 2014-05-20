@@ -17,7 +17,7 @@ if (!empty($display['summary']) && !empty($item->monk_summary)) {
 }
 
 if (!empty($display['thumbnail']) && !empty($item->medias->thumbnail)) {
-    echo $item->medias->thumbnail->htmlImgResized(200, null, array('alt' => $item->monk_name));
+    echo $item->shared_medias_context->thumbnail->htmlImgResized(200, null, array('alt' => $item->monk_name));
 }
 
 if (!empty($display['wysiwyg']) && !empty($item->wysiwygs)) {

@@ -10,19 +10,8 @@
 
 namespace Nos\Monkey;
 
-class Controller_Admin_Monkey extends \Nos\Controller_Admin_Crud
+use Nos\Controller_Admin_Crud;
+
+class Controller_Admin_Monkey extends Controller_Admin_Crud
 {
-    protected function fieldset($fieldset)
-    {
-        $fieldset = parent::fieldset($fieldset);
-
-        $species = Model_Species::findMainOrContext($this->item->monk_context);
-        $options = array();
-        foreach ($species as $sp) {
-            $options[$sp->mksp_context_common_id] = $sp->mksp_title;
-        }
-        $fieldset->field('monk_species_common_id')->set_options($options);
-
-        return $fieldset;
-    }
 }

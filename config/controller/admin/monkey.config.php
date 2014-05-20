@@ -109,8 +109,10 @@ return array(
         ),
         'monk_species_common_id' => array(
             'label' => 'Species: ',
-            'form' => array(
-                'type' => 'select',
+            'renderer' => 'Nos\Renderer_Select_Model',
+            'renderer_options' => array(
+                'model' => 'Nos\Monkey\Model_Species',
+                'shared_context' => true,
             ),
         ),
         'monk_virtual_name' => array(
